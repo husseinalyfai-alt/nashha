@@ -1,20 +1,22 @@
 (function(){
+  function isInternalNav(a){
+    const h=a.getAttribute('href')||'';
+    return !h || h.startsWith('#') || h.startsWith('javascript:') || h.startsWith('mailto:') || h.startsWith('tel:') || /^(https?:)?\/\/nashhal\.github\.io/i.test(h) || /article\.html/i.test(h);
+  }
   function isNewsLink(a){
-    if(!a||!a.href)return false;
-    const u=a.href;
-    return /data\/news\.json|news\.json|article/i.test(u) || a.matches('[data-news-id],[data-id]');
+    if(!a||isInternalNav(a)) return false;
+    const h=a.getAttribute('href')||'';
+    return /sabanew\.net|adenalghad\.net|almasdaronline\.com|south24\.net|telegram\.me|t\.me|twitter\.com|x\.com|facebook\.com|instagram\.com|youtube\.com/i.test(h) || a.closest('.card,.hero-main,.rank')!==null;
   }
   function route(){
     document.querySelectorAll('a').forEach(function(a){
       if(!isNewsLink(a)) return;
-      let id=a.dataset.newsId||a.dataset.id;
-      if(!id){
-        try{const u=new URL(a.href,location.href); id=u.searchParams.get('id');}catch(e){}
-      }
-      if(id && !/article\.html/i.test(a.href)){
-        a.href='article.html?id='+encodeURIComponent(id);
-        a.removeAttribute('target');
-      }
+      const href=a.getAttribute('href')||'';
+      if(!href || /article\.html/i.test(href)) return;
+      const title=((a.dataset.title||a.textContent||'').replace(/\s+/g,' ').trim()).slice(0,300);
+      a.setAttribute('href','article.html?source='+encodeURIComponent(href)+'&title='+encodeURIComponent(title));
+      a.removeAttribute('target');
+      a.removeAttribute('rel');
     });
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',route); else route();
