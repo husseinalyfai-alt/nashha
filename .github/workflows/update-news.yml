@@ -1,9 +1,8 @@
-name: تحديث الشريط العاجل تلقائيًا
+name: تحديث أخبار نهشل
 
 on:
   schedule:
     - cron: "0 */2 * * *"
-
   workflow_dispatch:
 
 permissions:
@@ -17,15 +16,15 @@ jobs:
       - name: تحميل المشروع
         uses: actions/checkout@v4
 
-      - name: تشغيل Python
+      - name: إعداد Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: تشغيل سكربت جلب الأخبار
+      - name: تشغيل سكربت الأخبار
         run: python3 fetch_news.py index.html
 
-      - name: حفظ التعديلات في المستودع
+      - name: حفظ التحديثات
         run: |
           git config user.name "nahshal-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -33,8 +32,8 @@ jobs:
           git add index.html
 
           if git diff --cached --quiet; then
-            echo "لا توجد تغييرات جديدة."
+            echo "لا توجد تغييرات جديدة"
           else
-            git commit -m "تحديث تلقائي لأخبار اليمن"
+            git commit -m "تحديث أخبار اليمن تلقائيًا"
             git push
           fi
