@@ -13,8 +13,7 @@
       if(!isNewsLink(a)) return;
       const href=a.getAttribute('href')||'';
       if(!href || /article\.html/i.test(href)) return;
-      const title=((a.dataset.title||a.textContent||'').replace(/\s+/g,' ').trim()).slice(0,300);
-      a.setAttribute('href','article.html?source='+encodeURIComponent(href)+'&title='+encodeURIComponent(title));
+      a.setAttribute('href','article.html?id='+encodeURIComponent(href));
       a.removeAttribute('target');
       a.removeAttribute('rel');
     });
