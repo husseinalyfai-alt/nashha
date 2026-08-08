@@ -2,14 +2,25 @@ name: تحديث الشريط العاجل تلقائيًا
 
 on:
   schedule:
-    - cron: "0 */2 * * *"   # كل ساعتين
-  workflow_dispatch:        # يسمح بتشغيله يدويًا من GitHub لو حبيت تجربه فورًا
+    - cron: "0 */2 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update-news:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: تحميل المشروع
+        uses: actions/checkout@v4
+
+      - name: تشغيل Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
       - name: تشغيل سكربت جلب الأخبار
         run: python3 fetch_news.py index.html
@@ -17,7 +28,13 @@ jobs:
       - name: حفظ التعديلات في المستودع
         run: |
           git config user.name "nahshal-bot"
-          git config user.email "bot@nahshal.local"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add index.html
-          git diff --quiet && git diff --staged --quiet || git commit -m "تحديث تلقائي للشريط العاجل"
-          git push
+
+          if git diff --cached --quiet; then
+            echo "لا توجد تغييرات جديدة."
+          else
+            git commit -m "تحديث تلقائي لأخبار اليمن"
+            git push
+          fi
