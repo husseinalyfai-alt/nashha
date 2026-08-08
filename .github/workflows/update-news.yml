@@ -1,0 +1,23 @@
+name: تحديث الشريط العاجل تلقائيًا
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"   # كل ساعتين
+  workflow_dispatch:        # يسمح بتشغيله يدويًا من GitHub لو حبيت تجربه فورًا
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: تشغيل سكربت جلب الأخبار
+        run: python3 fetch_news.py index.html
+
+      - name: حفظ التعديلات في المستودع
+        run: |
+          git config user.name "nahshal-bot"
+          git config user.email "bot@nahshal.local"
+          git add index.html
+          git diff --quiet && git diff --staged --quiet || git commit -m "تحديث تلقائي للشريط العاجل"
+          git push
