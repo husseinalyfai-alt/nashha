@@ -1,0 +1,66 @@
+name: Update Nashhal site
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fix site name and add article
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+
+          # Correct the site name everywhere in the homepage.
+          html = html.replace('نهشل', 'نشهل')
+
+          marker = '<!-- ARTICLE-NASHHAL-09082026 -->'
+          if marker not in html:
+              article = '''
+          <section class="section" id="latest-report">
+            <div class="wrap">
+              <div class="section-head">
+                <h2>أحدث التقارير</h2>
+                <a href="articles/9-august-2026.html">عرض التقرير الكامل ←</a>
+              </div>
+              <article class="card" style="max-width:760px;margin:auto;">
+                <div class="card-body">
+                  <div class="report-label">تقرير حقوقي</div>
+                  <h3><a href="articles/9-august-2026.html">تقرير رصد انتهاكات الحوثيين في اليمن | 9 يوليو – 9 أغسطس 2026</a></h3>
+                  <p>رصد زمني لأبرز الحوادث والضحايا والألغام والتهديدات للملاحة، مع توضيح درجات التحقق وحدود المصادر.</p>
+                  <div class="meta"><span>9 أغسطس 2026</span><span>نشهل</span></div>
+                </div>
+              </article>
+            </div>
+          </section>
+          <!-- ARTICLE-NASHHAL-09082026 -->
+          '''
+              if '</main>' not in html:
+                  raise SystemExit('Could not find </main> in index.html')
+              html = html.replace('</main>', article + '\n</main>', 1)
+
+          path.write_text(html, encoding='utf-8')
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes needed."
+            exit 0
+          fi
+          git commit -m "إضافة التقرير وتصحيح اسم نشهل [skip ci]"
+          git push
