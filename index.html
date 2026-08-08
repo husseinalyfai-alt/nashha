@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>نهشل | منصة إخبارية</title>
+<title>نهشل | أخبار اليمن</title>
 
-<meta name="description" content="نهشل منصة إخبارية تقدم تغطية متواصلة لأبرز أخبار ومستجدات الجنوب، ورصد للتطورات الميدانية والسياسية والأمنية بمهنية وموضوعية.">
-
-<link rel="icon" href="logo.jpg">
+<meta name="description" content="نهشل منصة إخبارية متخصصة في أخبار اليمن والتطورات السياسية والأمنية والميدانية والتقارير الأممية الخاصة باليمن.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +42,7 @@ body{
   background:var(--ink);
   color:var(--paper);
   font-family:var(--sans);
-  line-height:1.6;
+  line-height:1.7;
   overflow-x:hidden;
 }
 
@@ -64,7 +62,7 @@ img{
   padding:0 24px;
 }
 
-/* الشريط العلوي */
+/* TOP */
 
 .utility{
   background:var(--ink-2);
@@ -77,7 +75,7 @@ img{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  height:38px;
+  min-height:38px;
 }
 
 .social{
@@ -85,7 +83,7 @@ img{
   gap:18px;
 }
 
-/* الهيدر */
+/* HEADER */
 
 header.masthead{
   padding:26px 0 18px;
@@ -148,7 +146,7 @@ header.masthead{
   font-weight:700;
 }
 
-/* القائمة */
+/* NAV */
 
 nav.mainnav{
   background:rgba(247,239,216,.96);
@@ -184,7 +182,7 @@ nav.mainnav a:hover{
   color:var(--ink);
 }
 
-/* عاجل */
+/* BREAKING */
 
 .ticker{
   background:var(--blood);
@@ -241,15 +239,11 @@ nav.mainnav a:hover{
 }
 
 @keyframes newsScroll{
-  from{
-    transform:translateX(0);
-  }
-  to{
-    transform:translateX(100%);
-  }
+  from{transform:translateX(0)}
+  to{transform:translateX(100%)}
 }
 
-/* الخبر الرئيسي */
+/* HERO */
 
 .hero{
   padding:45px 0 30px;
@@ -282,8 +276,7 @@ nav.mainnav a:hover{
 
 .hero-figure{
   aspect-ratio:16/9;
-  background:
-  linear-gradient(135deg,#efe2bd,#f7efd8);
+  background:linear-gradient(135deg,#efe2bd,#f7efd8);
   border:1px solid var(--line);
   margin-bottom:20px;
   overflow:hidden;
@@ -324,7 +317,7 @@ nav.mainnav a:hover{
   padding-top:14px;
 }
 
-/* الأكثر قراءة */
+/* MOST READ */
 
 .side-list{
   display:flex;
@@ -374,7 +367,7 @@ nav.mainnav a:hover{
   margin-top:4px;
 }
 
-/* الأقسام */
+/* SECTIONS */
 
 .section{
   padding:40px 0;
@@ -409,11 +402,11 @@ nav.mainnav a:hover{
   color:var(--blood-bright);
 }
 
-/* التصنيفات */
+/* CATEGORIES */
 
 .catstrip{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns:repeat(6,1fr);
   border:1px solid var(--line);
 }
 
@@ -432,7 +425,7 @@ nav.mainnav a:hover{
   color:var(--ink);
 }
 
-/* الأخبار */
+/* NEWS CARDS */
 
 .card-grid{
   display:grid;
@@ -511,7 +504,63 @@ nav.mainnav a:hover{
   padding-top:10px;
 }
 
-/* الميدان */
+/* UN REPORTS */
+
+.reports{
+  background:var(--ink-2);
+}
+
+.report-card{
+  border:1px solid var(--line);
+  background:var(--ink);
+  padding:24px;
+  transition:.2s;
+}
+
+.report-card:hover{
+  border-color:var(--blood);
+  transform:translateY(-3px);
+}
+
+.report-label{
+  display:inline-block;
+  background:var(--blood);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:11px;
+  font-weight:700;
+  padding:5px 10px;
+  margin-bottom:14px;
+}
+
+.report-card h3{
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:1.6;
+  margin-bottom:10px;
+}
+
+.report-card p{
+  color:var(--paper-dim);
+  font-size:13.5px;
+  margin-bottom:16px;
+}
+
+.report-source{
+  border-top:1px solid var(--line);
+  padding-top:12px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  font-size:11.5px;
+  color:var(--paper-dim);
+}
+
+.report-source strong{
+  color:var(--blood-bright);
+}
+
+/* FIELD */
 
 .field{
   background:var(--ink-2);
@@ -562,7 +611,7 @@ nav.mainnav a:hover{
   background:var(--blood);
 }
 
-/* الفوتر */
+/* FOOTER */
 
 footer{
   padding:50px 0 26px;
@@ -620,7 +669,7 @@ footer ul a:hover{
   gap:10px;
 }
 
-/* الجوال */
+/* MOBILE */
 
 @media(max-width:880px){
 
@@ -690,12 +739,14 @@ footer ul a:hover{
 
 <body>
 
+
 <!-- الشريط العلوي -->
 
 <div class="utility">
+
   <div class="wrap">
 
-    <div class="date">
+    <div>
       السبت، ٨ أغسطس ٢٠٢٦
     </div>
 
@@ -707,10 +758,11 @@ footer ul a:hover{
     </div>
 
   </div>
+
 </div>
 
 
-<!-- الهيدر -->
+<!-- HEADER -->
 
 <header class="masthead">
 
@@ -729,7 +781,7 @@ footer ul a:hover{
         </div>
 
         <div class="tag">
-          منصة إخبارية · تغطية متواصلة لأخبار الجنوب
+          منصة إخبارية يمنية · خبر · تفاصيل · متابعة
         </div>
 
       </div>
@@ -751,27 +803,27 @@ footer ul a:hover{
 </header>
 
 
-<!-- القائمة -->
+<!-- NAV -->
 
 <nav class="mainnav">
 
   <div class="wrap">
 
     <a href="#">الرئيسية</a>
+    <a href="#">اليمن</a>
     <a href="#">السياسة</a>
     <a href="#">الأمن</a>
     <a href="#">الميدان</a>
+    <a href="#">الجنوب</a>
     <a href="#">الاقتصاد</a>
-    <a href="#">المجتمع</a>
-    <a href="#">تقارير</a>
-    <a href="#">تواصل معنا</a>
+    <a href="#">تقارير أممية</a>
 
   </div>
 
 </nav>
 
 
-<!-- عاجل -->
+<!-- BREAKING -->
 
 <div class="ticker">
 
@@ -779,21 +831,28 @@ footer ul a:hover{
 
     <span class="dot"></span>
 
-    عاجل
+    عاجل اليمن
 
   </div>
 
   <div class="track-wrap">
 
     <div class="track">
-        <span>فرانس 24</span>مخاوف من اتساع رقعة الصراع في اليمن
-        <span>فرانس 24</span>اتحاد كوريا الجنوبية لكرة القدم يعتذر على خلفية اتهامات بتقديم &quot;خدمات جنسية&quot; ​لحكام أجانب
-        <span>بي بي سي</span>هجمات متبادلة بين الحوثيين والجيش اليمني، والأمم المتحدة تحذر من صراع أوسع
-        <span>بي بي سي</span>هل تصمد الجولة السابعة من مفاوضات لبنان وإسرائيل في روما أمام التصعيد في الجنوب؟
-        <span>رويترز عربي</span>اليابان.. إجلاء 260 ألف شخص من المناطق الجنوبية
-        <span>رويترز عربي</span>اليمن.. سيول تغمر شوارع العاصمة صنعاء
-      
-      
+
+      <span>اليمن</span>
+      آخر التطورات السياسية والميدانية في اليمن
+
+      <span>الميدان</span>
+      مستجدات المواجهات مع مليشيا الحوثي
+
+      <span>الجنوب</span>
+      أبرز التطورات في المحافظات الجنوبية
+
+      <span>تقارير</span>
+      أحدث التقارير الدولية والأممية حول اليمن
+
+      <span>نهشل</span>
+      خبر · تفاصيل · متابعة
 
     </div>
 
@@ -805,7 +864,7 @@ footer ul a:hover{
 <main>
 
 
-<!-- الخبر الرئيسي -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -814,29 +873,41 @@ footer ul a:hover{
     <article>
 
       <span class="eyebrow">
-        الخبر الرئيسي
+        اليمن
       </span>
 
       <div class="hero-figure">
-        <img src="logo.jpg" alt="نهشل">
+        <img src="logo.jpg" alt="أخبار اليمن">
       </div>
 
-      <h1><a href="https://www.france24.com/ar/%D9%81%D9%8A%D8%AF%D9%8A%D9%88/20260808-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D9%85%D9%86-%D8%A7%D8%AA%D8%B3%D8%A7%D8%B9-%D8%B1%D9%82%D8%B9%D8%A9-%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D9%85%D9%86" target="_blank" rel="noopener" style="color:inherit;">مخاوف من اتساع رقعة الصراع في اليمن</a></h1>
+      <h1>
+        اليمن في صدارة المتابعة: أخبار سياسية وميدانية وتقارير دولية
+      </h1>
 
       <p>
-        تغطية متواصلة لأبرز الأخبار والتطورات السياسية والأمنية والميدانية، مع متابعة مستمرة للأحداث من مصادرها.
+        تغطية متواصلة للشأن اليمني، تشمل التطورات السياسية والأمنية والعسكرية والاقتصادية، مع متابعة التقارير الدولية والأممية المتعلقة باليمن.
       </p>
 
       <div class="byline">
-            <span>المصدر: <b>فرانس 24</b></span>
-            <span>12:17</span>
-            <span>تحديث تلقائي</span>
-          </div>
+
+        <span>
+          هيئة تحرير نهشل
+        </span>
+
+        <span>
+          اليوم
+        </span>
+
+        <span>
+          أخبار اليمن
+        </span>
+
+      </div>
 
     </article>
 
 
-    <!-- الأكثر قراءة -->
+    <!-- MOST READ -->
 
     <aside class="side-list">
 
@@ -847,7 +918,7 @@ footer ul a:hover{
         </span>
 
         <span style="color:var(--blood-bright);font-size:12px;">
-          اليوم
+          اليمن
         </span>
 
       </div>
@@ -855,18 +926,16 @@ footer ul a:hover{
 
       <div class="side-item">
 
-        <span class="n">
-          01
-        </span>
+        <span class="n">01</span>
 
         <div>
 
           <div class="t">
-            آخر التطورات السياسية والميدانية في الجنوب
+            آخر التطورات السياسية في اليمن
           </div>
 
           <div class="meta">
-            السياسة · قبل ساعة
+            السياسة · اليوم
           </div>
 
         </div>
@@ -876,18 +945,16 @@ footer ul a:hover{
 
       <div class="side-item">
 
-        <span class="n">
-          02
-        </span>
+        <span class="n">02</span>
 
         <div>
 
           <div class="t">
-            مستجدات الأوضاع الأمنية في المحافظات الجنوبية
+            مستجدات المواجهات مع مليشيا الحوثي
           </div>
 
           <div class="meta">
-            الأمن · قبل ٣ ساعات
+            الميدان · اليوم
           </div>
 
         </div>
@@ -897,18 +964,16 @@ footer ul a:hover{
 
       <div class="side-item">
 
-        <span class="n">
-          03
-        </span>
+        <span class="n">03</span>
 
         <div>
 
           <div class="t">
-            أبرز التطورات الاقتصادية خلال الأيام الماضية
+            تطورات الأوضاع في جنوب اليمن
           </div>
 
           <div class="meta">
-            الاقتصاد · قبل ٥ ساعات
+            الجنوب · اليوم
           </div>
 
         </div>
@@ -918,18 +983,16 @@ footer ul a:hover{
 
       <div class="side-item">
 
-        <span class="n">
-          04
-        </span>
+        <span class="n">04</span>
 
         <div>
 
           <div class="t">
-            تغطية مستمرة لأبرز الأحداث والتطورات
+            أحدث التقارير الدولية حول اليمن
           </div>
 
           <div class="meta">
-            المجتمع · أمس
+            تقارير · اليوم
           </div>
 
         </div>
@@ -943,7 +1006,7 @@ footer ul a:hover{
 </section>
 
 
-<!-- التصنيفات -->
+<!-- CATEGORIES -->
 
 <section class="section">
 
@@ -952,7 +1015,7 @@ footer ul a:hover{
     <div class="section-head">
 
       <h2>
-        تصنيفات المتابعة
+        أقسام أخبار اليمن
       </h2>
 
     </div>
@@ -963,6 +1026,7 @@ footer ul a:hover{
       <a href="#">السياسة</a>
       <a href="#">الأمن</a>
       <a href="#">الميدان</a>
+      <a href="#">الجنوب</a>
       <a href="#">الاقتصاد</a>
       <a href="#">المجتمع</a>
 
@@ -973,7 +1037,7 @@ footer ul a:hover{
 </section>
 
 
-<!-- آخر الأخبار -->
+<!-- NEWS -->
 
 <section class="section">
 
@@ -982,7 +1046,7 @@ footer ul a:hover{
     <div class="section-head">
 
       <h2>
-        آخر الأخبار
+        آخر أخبار اليمن
       </h2>
 
       <a href="#">
@@ -993,56 +1057,125 @@ footer ul a:hover{
 
 
     <div class="card-grid">
-          <article class="card">
-            <div class="card-figure"><span class="tag">فرانس 24</span></div>
-            <div class="card-body">
-              <h3><a href="https://www.france24.com/ar/%D8%A2%D8%B3%D9%8A%D8%A7/20260808-%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D9%83%D9%88%D8%B1%D9%8A%D8%A7-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9-%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D9%82%D8%AF%D9%85-%D8%A7%D8%B9%D8%AA%D8%B0%D8%A7%D8%B1-%D9%81%D8%B6%D9%8A%D8%AD%D8%A9-%D8%A3%D8%AE%D9%84%D8%A7%D9%82-%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D8%AC%D9%86%D8%B3%D9%8A%D8%A9-%D8%AD%D9%83%D8%A7%D9%85-%D8%A3%D8%AC%D8%A7%D9%86%D8%A8" target="_blank" rel="noopener" style="color:inherit;">اتحاد كوريا الجنوبية لكرة القدم يعتذر على خلفية اتهامات بتقديم &quot;خدمات جنسية&quot; ​لحكام أجانب</a></h3>
-              <p>قدم الاتحاد الكوري الجنوبي لكرة القدم، السبت، اعتذارا على خلفية نشر شبكة جيه تي بي سي الإعلامية المحلية تقريرا يستند إلى تحقيق حكومي، تتحدث فيه عن تقديم المؤسسة…</p>
-              <div class="meta"><span>فرانس 24</span><span>09:35</span></div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-figure"><span class="tag">بي بي سي</span></div>
-            <div class="card-body">
-              <h3><a href="https://www.bbc.com/arabic/articles/cx2d0wqj715o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" style="color:inherit;">هجمات متبادلة بين الحوثيين والجيش اليمني، والأمم المتحدة تحذر من صراع أوسع</a></h3>
-              <p>مبعوث الأمم المتحدة هانس غروندبرغ يقول إن اليمن يواجه &quot;خطراً متزايداً للعودة إلى صراع واسع النطاق، على نحو لم يشهده منذ الهدنة التي توسطت فيها الأمم المتحدة في…</p>
-              <div class="meta"><span>بي بي سي</span><span>15:02</span></div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-figure"><span class="tag">بي بي سي</span></div>
-            <div class="card-body">
-              <h3><a href="https://www.bbc.com/arabic/articles/cjd4r8l5n75o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener" style="color:inherit;">هل تصمد الجولة السابعة من مفاوضات لبنان وإسرائيل في روما أمام التصعيد في الجنوب؟</a></h3>
-              <p>مقتل جنديين إسرائيليين وغارات على جنوب لبنان تلقي بظلالها على الجولة السابعة من المفاوضات المباشرة في روما. فما أبرز نقاط الخلاف، وهل تصمد المحادثات أمام التصعي…</p>
-              <div class="meta"><span>بي بي سي</span><span>17:24</span></div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-figure"><span class="tag">رويترز عربي</span></div>
-            <div class="card-body">
-              <h3><a href="https://arabic.rt.com/videoclub/1818916-%D8%A7%D9%84%D9%8A%D8%A7%D8%A8%D8%A7%D9%86-%D8%A5%D8%AC%D9%84%D8%A7%D8%A1-260-%D8%A3%D9%84%D9%81-%D8%B4%D8%AE%D8%B5-%D9%85%D9%86-%D9%85%D9%86%D8%A7%D8%B7%D9%82-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9/" target="_blank" rel="noopener" style="color:inherit;">اليابان.. إجلاء 260 ألف شخص من المناطق الجنوبية</a></h3>
-              <p>أعلنت السلطات اليابانية عن إجلاء 260 ألف شخص من المناطق الجنوبية جراء مرور إعصار &quot;دولفين&quot;، حيث بلغت سرعة الرياح فوق المحيط 60 مترا في الثانية.</p>
-              <div class="meta"><span>رويترز عربي</span><span>11:10</span></div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-figure"><span class="tag">رويترز عربي</span></div>
-            <div class="card-body">
-              <h3><a href="https://arabic.rt.com/videoclub/1818924-%D8%A7%D9%84%D9%8A%D9%85%D9%86-%D8%B3%D9%8A%D9%88%D9%84-%D8%AA%D8%BA%D9%85%D8%B1-%D8%B4%D9%88%D8%A7%D8%B1%D8%B9-%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D8%B5%D9%86%D8%B9%D8%A7%D8%A1/" target="_blank" rel="noopener" style="color:inherit;">اليمن.. سيول تغمر شوارع العاصمة صنعاء</a></h3>
-              <p>تداولت شبكات التواصل الاجتماعي مشاهد لسيول غمرت نفقا في عاصمة صنعاء اليمنية عقب عواصف رعدية شديدة، ما أدى إلى غرق السيارات واحتجاز العديد من السكان في منازلهم.</p>
-              <div class="meta"><span>رويترز عربي</span><span>11:08</span></div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-figure"><span class="tag">رويترز عربي</span></div>
-            <div class="card-body">
-              <h3><a href="https://arabic.rt.com/world/1818884-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9-%D9%85%D9%88%D8%B3%D9%83%D9%88-%D9%85%D8%B3%D8%AA%D8%B9%D8%AF%D8%A9-%D9%84%D9%85%D9%88%D8%A7%D8%B5%D9%84%D8%A9-%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9-%D8%AC%D9%88%D8%B1%D8%AC%D9%8A%D8%A7-%D9%88%D8%A3%D8%A8%D8%AE%D8%A7%D8%B2%D9%8A%D8%A7-%D9%88%D8%A3%D9%88%D8%B3%D9%8A%D8%AA%D9%8A%D8%A7-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9-%D9%81%D9%8A-%D8%AF%D9%81%D8%B9-%D8%A7%D9%84%D9%85%D9%81%D8%A7%D9%88%D8%B6%D8%A7%D8%AA/" target="_blank" rel="noopener" style="color:inherit;">الخارجية الروسية: موسكو مستعدة لمواصلة مساعدة جورجيا وأبخازيا وأوسيتيا الجنوبية في دفع المفاوضات</a></h3>
-              <p>أعلنت وزارة الخارجية الروسية في الذكرى السنوية لبدء نزاع عام 2008 أن روسيا مستعدة لمواصلة مساعدة جورجيا وأبخازيا وأوسيتيا الجنوبية في دفع المفاوضات وبناء العلاق…</p>
-              <div class="meta"><span>رويترز عربي</span><span>08:30</span></div>
-            </div>
-          </article>
-        
-        
+
+
+      <article class="card">
+
+        <div class="card-figure">
+
+          <img src="logo.jpg" alt="اليمن">
+
+          <span class="tag">
+            اليمن
+          </span>
+
+        </div>
+
+        <div class="card-body">
+
+          <h3>
+            تطورات سياسية جديدة في المشهد اليمني
+          </h3>
+
+          <p>
+            متابعة لأبرز التحركات والبيانات والتطورات السياسية المتعلقة بالشأن اليمني.
+          </p>
+
+          <div class="meta">
+
+            <span>
+              هيئة التحرير
+            </span>
+
+            <span>
+              اليوم
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="card">
+
+        <div class="card-figure">
+
+          <img src="logo.jpg" alt="الميدان اليمني">
+
+          <span class="tag">
+            الميدان
+          </span>
+
+        </div>
+
+        <div class="card-body">
+
+          <h3>
+            مستجدات المواجهات والتطورات العسكرية في اليمن
+          </h3>
+
+          <p>
+            رصد لأبرز التطورات الميدانية والتحركات العسكرية في الجبهات اليمنية.
+          </p>
+
+          <div class="meta">
+
+            <span>
+              الميدان
+            </span>
+
+            <span>
+              اليوم
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="card">
+
+        <div class="card-figure">
+
+          <img src="logo.jpg" alt="جنوب اليمن">
+
+          <span class="tag">
+            الجنوب
+          </span>
+
+        </div>
+
+        <div class="card-body">
+
+          <h3>
+            أبرز التطورات السياسية والأمنية في جنوب اليمن
+          </h3>
+
+          <p>
+            متابعة مستمرة للأحداث في عدن وشبوة وحضرموت وأبين ولحج والضالع وبقية المحافظات.
+          </p>
+
+          <div class="meta">
+
+            <span>
+              أخبار الجنوب
+            </span>
+
+            <span>
+              اليوم
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
 
 
     </div>
@@ -1052,7 +1185,215 @@ footer ul a:hover{
 </section>
 
 
-<!-- الميدان -->
+<!-- UN REPORTS -->
+
+<section class="section reports">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <h2>
+        تقارير أممية عن اليمن
+      </h2>
+
+      <a href="#">
+        جميع التقارير ←
+      </a>
+
+    </div>
+
+
+    <div class="card-grid">
+
+
+      <article class="report-card">
+
+        <span class="report-label">
+          الأمم المتحدة
+        </span>
+
+        <h3>
+          تقارير الأمم المتحدة الخاصة بالوضع الإنساني والسياسي في اليمن
+        </h3>
+
+        <p>
+          متابعة التقارير والبيانات الرسمية الصادرة عن الأمم المتحدة والجهات التابعة لها بشأن اليمن.
+        </p>
+
+        <div class="report-source">
+
+          <span>
+            المصدر
+          </span>
+
+          <strong>
+            UN Yemen
+          </strong>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="report-card">
+
+        <span class="report-label">
+          مجلس الأمن
+        </span>
+
+        <h3>
+          قرارات وإحاطات مجلس الأمن المتعلقة باليمن
+        </h3>
+
+        <p>
+          رصد الإحاطات والقرارات والمناقشات الرسمية المتعلقة بالأزمة اليمنية.
+        </p>
+
+        <div class="report-source">
+
+          <span>
+            المصدر
+          </span>
+
+          <strong>
+            UN Security Council
+          </strong>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="report-card">
+
+        <span class="report-label">
+          OCHA
+        </span>
+
+        <h3>
+          التقارير الإنسانية والاحتياجات الإنسانية في اليمن
+        </h3>
+
+        <p>
+          متابعة البيانات والتقارير المتعلقة بالاحتياجات الإنسانية والاستجابة الدولية داخل اليمن.
+        </p>
+
+        <div class="report-source">
+
+          <span>
+            المصدر
+          </span>
+
+          <strong>
+            OCHA
+          </strong>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="report-card">
+
+        <span class="report-label">
+          UNDP
+        </span>
+
+        <h3>
+          تقارير التنمية وإعادة الاستقرار في اليمن
+        </h3>
+
+        <p>
+          تقارير وبرامج الأمم المتحدة المتعلقة بالتنمية والاستقرار ودعم المجتمعات اليمنية.
+        </p>
+
+        <div class="report-source">
+
+          <span>
+            المصدر
+          </span>
+
+          <strong>
+            UNDP Yemen
+          </strong>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="report-card">
+
+        <span class="report-label">
+          UNICEF
+        </span>
+
+        <h3>
+          تقارير الأطفال والوضع الإنساني في اليمن
+        </h3>
+
+        <p>
+          أحدث التقارير والبيانات المتعلقة بالأطفال والخدمات الإنسانية في اليمن.
+        </p>
+
+        <div class="report-source">
+
+          <span>
+            المصدر
+          </span>
+
+          <strong>
+            UNICEF
+          </strong>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="report-card">
+
+        <span class="report-label">
+          تقارير دولية
+        </span>
+
+        <h3>
+          أهم التقارير الدولية المتعلقة باليمن
+        </h3>
+
+        <p>
+          تجميع للتقارير الدولية الموثوقة التي تتناول التطورات السياسية والأمنية والإنسانية في اليمن.
+        </p>
+
+        <div class="report-source">
+
+          <span>
+            القسم
+          </span>
+
+          <strong>
+            تقارير اليمن
+          </strong>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FIELD -->
 
 <section class="field">
 
@@ -1061,20 +1402,19 @@ footer ul a:hover{
     <div>
 
       <h2>
-        مراسلونا في
-        <span>الميدان</span>
+        نهشل
+        <span>يتابع اليمن</span>
         على مدار الساعة
       </h2>
 
       <p>
-        شبكة مراسلين تتابع الأحداث والتطورات وتنقل أبرز المستجدات أولاً بأول.
+        أخبار اليمن وتفاصيل الأحداث والتطورات الميدانية والسياسية، إلى جانب التقارير الدولية والأممية الخاصة باليمن.
       </p>
 
     </div>
 
-
     <a href="#" class="btn">
-      تابع التغطية المباشرة ←
+      تابع أخبار اليمن ←
     </a>
 
   </div>
@@ -1085,7 +1425,7 @@ footer ul a:hover{
 </main>
 
 
-<!-- الفوتر -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1116,7 +1456,7 @@ footer ul a:hover{
 
 
         <p class="about">
-          تغطية متواصلة لأبرز أخبار ومستجدات الجنوب، ورصد للتطورات الميدانية والسياسية والأمنية بمهنية وموضوعية.
+          منصة إخبارية متخصصة في أخبار اليمن، تقدم تغطية سياسية وأمنية وميدانية، إضافة إلى متابعة التقارير الدولية والأممية الخاصة باليمن.
         </p>
 
       </div>
@@ -1125,15 +1465,16 @@ footer ul a:hover{
       <div>
 
         <h4>
-          أقسام
+          أخبار اليمن
         </h4>
 
         <ul>
 
+          <li><a href="#">اليمن</a></li>
           <li><a href="#">السياسة</a></li>
           <li><a href="#">الأمن</a></li>
           <li><a href="#">الميدان</a></li>
-          <li><a href="#">الاقتصاد</a></li>
+          <li><a href="#">الجنوب</a></li>
 
         </ul>
 
@@ -1143,7 +1484,26 @@ footer ul a:hover{
       <div>
 
         <h4>
-          المنصة
+          التقارير
+        </h4>
+
+        <ul>
+
+          <li><a href="#">تقارير الأمم المتحدة</a></li>
+          <li><a href="#">مجلس الأمن</a></li>
+          <li><a href="#">OCHA</a></li>
+          <li><a href="#">UNDP</a></li>
+          <li><a href="#">UNICEF</a></li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          نهشل
         </h4>
 
         <ul>
@@ -1151,23 +1511,7 @@ footer ul a:hover{
           <li><a href="#">من نحن</a></li>
           <li><a href="#">تواصل معنا</a></li>
           <li><a href="#">سياسة النشر</a></li>
-
-        </ul>
-
-      </div>
-
-
-      <div>
-
-        <h4>
-          تابعنا
-        </h4>
-
-        <ul>
-
-          <li><a href="#">تويتر / X</a></li>
-          <li><a href="#">تيليجرام</a></li>
-          <li><a href="#">واتساب</a></li>
+          <li><a href="#">المصادر</a></li>
 
         </ul>
 
@@ -1184,7 +1528,7 @@ footer ul a:hover{
       </span>
 
       <span>
-        خبر · تفاصيل · متابعة
+        اليمن · خبر · تفاصيل · متابعة
       </span>
 
     </div>
