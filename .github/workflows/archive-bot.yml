@@ -2,6 +2,10 @@ name: Heritage Archive Bot
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/archive_bot.py'
+      - '.github/workflows/archive-bot.yml'
   schedule:
     - cron: '17 */6 * * *'
 
@@ -20,24 +24,12 @@ jobs:
           python-version: '3.12'
       - name: Install requests
         run: pip install requests
-      - name: Search public archive images
+      - name: Search Wikimedia Commons and Internet Archive
         run: python scripts/archive_bot.py
-      - name: Attach gallery to heritage page
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          p=Path('heritage.html')
-          s=p.read_text(encoding='utf-8')
-          if 'archive-gallery.css' not in s:
-              s=s.replace('</head>', '<link rel="stylesheet" href="archive-gallery.css"></head>')
-          if 'archive-gallery.js' not in s:
-              s=s.replace('</body>', '<script src="archive-gallery.js"></script></body>')
-          p.write_text(s, encoding='utf-8')
-          PY
-      - name: Commit archive index and page wiring
+      - name: Commit archive index
         run: |
           git config user.name 'nashhal-archive-bot'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/heritage-images.json heritage.html
-          git diff --cached --quiet || git commit -m 'تحديث معرض الصور التراثية'
+          git add data/heritage-images.json
+          git diff --cached --quiet || git commit -m 'تحديث أرشيف الصور التاريخية'
           git push
