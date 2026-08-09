@@ -33,14 +33,43 @@ jobs:
         run: python scripts/resistance_index.py
       - name: Commit archive and history indexes
         run: |
+          set -e
           git config user.name 'nashhal-archive-bot'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          mkdir -p /tmp/nashhal-archive
+          cp data/heritage-images.json /tmp/nashhal-archive/heritage-images.json
+          cp data/historical-sources.json /tmp/nashhal-archive/historical-sources.json
+          cp data/resistance-events.json /tmp/nashhal-archive/resistance-events.json
+
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/nashhal-archive/heritage-images.json data/heritage-images.json
+          cp /tmp/nashhal-archive/historical-sources.json data/historical-sources.json
+          cp /tmp/nashhal-archive/resistance-events.json data/resistance-events.json
+
           git add data/heritage-images.json data/historical-sources.json data/resistance-events.json
           if git diff --cached --quiet; then
             echo 'لا توجد تحديثات جديدة في الأرشيف.'
             exit 0
           fi
           git commit -m 'تحديث الأرشيف وفهرس المقاومة التاريخية'
-          git fetch origin main
-          git rebase origin/main
-          git push origin HEAD:main
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push attempt $attempt failed; refreshing main..."
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/nashhal-archive/heritage-images.json data/heritage-images.json
+            cp /tmp/nashhal-archive/historical-sources.json data/historical-sources.json
+            cp /tmp/nashhal-archive/resistance-events.json data/resistance-events.json
+            git add data/heritage-images.json data/historical-sources.json data/resistance-events.json
+            if git diff --cached --quiet; then
+              exit 0
+            fi
+            git commit -m 'تحديث الأرشيف وفهرس المقاومة التاريخية'
+          done
+          echo 'تعذر رفع تحديث الأرشيف بعد عدة محاولات.'
+          exit 1
