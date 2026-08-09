@@ -2,7 +2,7 @@ import json, os, re
 from datetime import datetime, timezone
 import feedparser
 
-# مصادر مسموحة للنشر التلقائي. يمكن إضافة مصادر RSS موثوقة لاحقًا.
+# مصادر عامة موثوقة. نستخدم RSS/صفحات الأخبار العامة بدل الاعتماد على تسجيل دخول X.
 FEEDS = [
     ("عدن الغد", "https://www.adenalghad.net/rss"),
     ("الأيام", "https://www.alayyam.info/rss"),
@@ -29,29 +29,34 @@ seen = {x.get("link") for x in existing if x.get("link")}
 items = []
 
 for source, url in FEEDS:
-    feed = feedparser.parse(url)
-    for entry in feed.entries[:20]:
+    try:
+        feed = feedparser.parse(url)
+    except Exception:
+        continue
+    for entry in feed.entries[:30]:
         title = re.sub(r"\s+", " ", entry.get("title", "")).strip()
         link = entry.get("link", "").strip()
         summary = re.sub(r"\s+", " ", entry.get("summary", "")).strip()
         if not title or not link or link in seen:
             continue
-
         text = f"{title} {summary}".lower()
         if not any(k in text for k in YEMEN_KEYWORDS):
             continue
-
         is_south = any(k in text for k in SOUTH_KEYWORDS)
         items.append({
+            "id": link,
             "title": title,
             "source": source,
+            "source_url": link,
             "link": link,
             "published": entry.get("published", ""),
             "collected_at": datetime.now(timezone.utc).isoformat(),
             "category": "الجنوب" if is_south else "اليمن",
             "status": "published",
             "confidence": "source_verified",
-            "auto_published": True
+            "auto_published": True,
+            "summary": summary,
+            "content": summary
         })
         seen.add(link)
 
