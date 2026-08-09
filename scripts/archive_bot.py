@@ -7,9 +7,14 @@ from datetime import datetime, timezone
 import requests
 
 OUT = "data/heritage-images.json"
+SOURCES_OUT = "data/historical-sources.json"
 COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 IA_API = "https://archive.org/advancedsearch.php"
+IA_META = "https://archive.org/metadata/"
 
+# Regions and historical entities. Queries are deliberately broad enough to
+# catch books, reports, maps and archival descriptions without treating search
+# results as facts until the source itself is inspected.
 SEARCHES = [
     ("يافع", ["Yafa Yemen", "Upper Yafa", "Lower Yafa", "Yafa Sultanate", "Yafa Yemen history"]),
     ("لحج", ["Lahej Sultanate", "Lahij Yemen", "Lahj Yemen history"]),
@@ -24,9 +29,35 @@ SEARCHES = [
     ("الجنوب", ["South Yemen history", "Aden Protectorate", "South Arabia history"]),
 ]
 
-ALLOWED_LICENSE = ("public domain", "cc0", "cc by", "cc by-sa", "no known copyright", "no known restrictions")
+# Historical-event searches. These are for documentary indexing only; the bot
+# does not generate operational military guidance or tactical instructions.
+EVENT_QUERIES = [
+    "Aden Protectorate tribal resistance British Yemen",
+    "South Arabia British expeditions Yemen tribes",
+    "Yafa British expedition Yemen",
+    "Upper Yafa British relations conflict",
+    "Lower Yafa British relations conflict",
+    "Lahej British occupation history",
+    "Dhala British campaign history",
+    "Wahidi Balhaf British history",
+    "Hadramaut British political history",
+    "Mahra British protectorate history",
+    "Aden British occupation 1839 history",
+    "Yemen South Arabia British treaties tribes history",
+    "عدن الاحتلال البريطاني تاريخ القبائل",
+    "يافع الانجليز تاريخ المقاومة",
+    "لحج الاحتلال البريطاني تاريخ",
+    "الضالع الاحتلال البريطاني تاريخ",
+    "حضرموت البريطاني تاريخ السلطنات",
+    "المهرة البريطاني تاريخ السلطنة",
+]
+
+ALLOWED_LICENSE = (
+    "public domain", "cc0", "cc by", "cc by-sa",
+    "no known copyright", "no known restrictions"
+)
 HEADERS = {
-    "User-Agent": "NashhalArchiveBot/3.0 (historical archive for Nashhal; contact via GitHub repository)"
+    "User-Agent": "NashhalArchiveBot/4.0 (historical archive index for Nashhal; see repository for contact)"
 }
 
 
@@ -36,8 +67,8 @@ def clean(v):
     return " ".join(str(v or "").split())
 
 
-def request_json(url, params, retries=4):
-    params = dict(params)
+def request_json(url, params=None, retries=4):
+    params = dict(params or {})
     params.setdefault("format", "json")
     params.setdefault("formatversion", 2)
     last = None
@@ -56,15 +87,15 @@ def request_json(url, params, retries=4):
     raise RuntimeError(last or "invalid response")
 
 
-def load_existing():
-    if not os.path.exists(OUT):
-        return []
+def load_json(path, default):
+    if not os.path.exists(path):
+        return default
     try:
-        with open(OUT, "r", encoding="utf-8") as f:
+        with open(path, "r", encoding="utf-8") as f:
             value = json.load(f)
-            return value if isinstance(value, list) else []
+            return value
     except Exception:
-        return []
+        return default
 
 
 def license_ok(text):
@@ -74,12 +105,13 @@ def license_ok(text):
 
 def relevance_ok(title, description, terms):
     blob = clean(f"{title} {description}").lower()
-    # Require at least one strong geographical/historical term. This prevents
-    # names such as Yafai/Yahia from pulling unrelated modern documents.
-    strong = [t.lower() for t in terms]
+    strong = [t.lower() for t in terms if len(t) >= 4]
     if not any(t in blob for t in strong):
         return False
-    blocked = ("guantanamo", "saudi–iranian rivalry", "saudi-iranian rivalry", "detainee", "terrorism")
+    blocked = (
+        "guantanamo", "saudi–iranian rivalry", "saudi-iranian rivalry",
+        "detainee", "terrorism", "isis", "islamic state"
+    )
     return not any(x in blob for x in blocked)
 
 
@@ -127,10 +159,37 @@ def collect_commons(seen):
                         "collected_at": datetime.now(timezone.utc).isoformat()
                     })
                     seen.add(item_id)
-                time.sleep(1.0)
+                time.sleep(0.8)
             except Exception as exc:
                 print(f"Commons search failed for {query}: {exc}")
     return found
+
+
+def archive_text_excerpt(identifier, max_chars=700):
+    """Fetch only a short OCR excerpt when a public-domain text file exists."""
+    try:
+        meta = request_json(IA_META + identifier)
+        files = meta.get("files", [])
+        candidates = []
+        for f in files:
+            name = clean(f.get("name"))
+            if name.lower().endswith(("_djvu.txt", "_text.pdf.txt", ".txt")):
+                candidates.append(name)
+        if not candidates:
+            return ""
+        # Prefer the generated DjVu OCR text.
+        candidates.sort(key=lambda x: ("_djvu.txt" not in x.lower(), len(x)))
+        name = candidates[0]
+        url = f"https://archive.org/download/{identifier}/{requests.utils.quote(name)}"
+        r = requests.get(url, timeout=30, headers=HEADERS)
+        r.raise_for_status()
+        text = r.text
+        text = re.sub(r"\\s+", " ", text)
+        # Keep a compact excerpt only; do not mirror books into the repository.
+        return text[:max_chars].strip()
+    except Exception as exc:
+        print(f"OCR unavailable for {identifier}: {exc}")
+        return ""
 
 
 def collect_archive_org(seen):
@@ -138,12 +197,10 @@ def collect_archive_org(seen):
     for region, queries in SEARCHES:
         for query in queries:
             try:
-                # Search the item metadata first; Archive.org can return HTML
-                # during throttling, so request_json retries before giving up.
                 data = request_json(IA_API, {
                     "q": f'(title:"{query}" OR description:"{query}" OR subject:"{query}") AND mediatype:(texts OR image)',
                     "fl[]": ["identifier", "title", "description", "date", "creator", "rights", "licenseurl", "mediatype", "subject"],
-                    "rows": 6, "page": 1, "sort[]": "downloads desc",
+                    "rows": 8, "page": 1, "sort[]": "downloads desc",
                 })
                 docs = data.get("response", {}).get("docs", [])
                 for doc in docs:
@@ -172,21 +229,100 @@ def collect_archive_org(seen):
                         "collected_at": datetime.now(timezone.utc).isoformat()
                     })
                     seen.add(item_id)
-                time.sleep(1.0)
+                time.sleep(0.8)
             except Exception as exc:
                 print(f"Internet Archive search failed for {query}: {exc}")
     return found
 
 
+def collect_historical_sources(existing_sources):
+    seen = {x.get("id") for x in existing_sources if x.get("id")}
+    found = []
+    for query in EVENT_QUERIES:
+        try:
+            data = request_json(IA_API, {
+                "q": f'(title:"{query}" OR description:"{query}" OR subject:"{query}") AND mediatype:texts',
+                "fl[]": ["identifier", "title", "description", "date", "creator", "rights", "licenseurl", "subject", "publisher"],
+                "rows": 12, "page": 1, "sort[]": "downloads desc",
+            })
+            for doc in data.get("response", {}).get("docs", []):
+                identifier = clean(doc.get("identifier"))
+                item_id = f"ia-source:{identifier}"
+                if not identifier or item_id in seen:
+                    continue
+                title = clean(doc.get("title", identifier))
+                description = clean(doc.get("description", ""))
+                subject = clean(doc.get("subject", ""))
+                rights = clean(doc.get("rights", ""))
+                license_url = clean(doc.get("licenseurl", ""))
+                # Metadata may omit rights; keep the source index but mark the
+                # reuse status as unknown. Only public-domain/CC text is OCRed.
+                reusable = license_ok(f"{rights} {license_url}")
+                if not relevance_ok(title, f"{description} {subject}", query.split()):
+                    continue
+                excerpt = archive_text_excerpt(identifier) if reusable else ""
+                found.append({
+                    "id": item_id,
+                    "title": title,
+                    "book_title": title,
+                    "creator": clean(doc.get("creator", "")),
+                    "publisher": clean(doc.get("publisher", "")),
+                    "date": clean(doc.get("date", "")),
+                    "region": infer_region(f"{query} {title} {subject}"),
+                    "topic": "تاريخ العلاقة والمواجهات مع الاستعمار البريطاني",
+                    "source": "Internet Archive",
+                    "archive_identifier": identifier,
+                    "source_url": f"https://archive.org/details/{identifier}",
+                    "rights": rights,
+                    "license_url": license_url,
+                    "reusable_text": reusable,
+                    "ocr_excerpt": excerpt,
+                    "search_query": query,
+                    "collected_at": datetime.now(timezone.utc).isoformat(),
+                })
+                seen.add(item_id)
+            time.sleep(0.8)
+        except Exception as exc:
+            print(f"Historical source search failed for {query}: {exc}")
+    combined = (found + existing_sources)[:1000]
+    os.makedirs(os.path.dirname(SOURCES_OUT), exist_ok=True)
+    with open(SOURCES_OUT, "w", encoding="utf-8") as f:
+        json.dump(combined, f, ensure_ascii=False, indent=2)
+    print(f"Historical sources added: {len(found)}; total: {len(combined)}")
+    return found
+
+
+def infer_region(text):
+    q = clean(text).lower()
+    mapping = [
+        ("يافع", ("yafa", "yafai", "يافع")),
+        ("لحج", ("lahij", "lahj", "lahej", "لحج")),
+        ("القعيطي", ("qaiti", "quaiti", "mukalla", "القعيطي")),
+        ("الكثيري", ("kathiri", "seiyun", "الكثيري")),
+        ("المهرة", ("mahra", "mahrah", "المهرة")),
+        ("سقطرى", ("socotra", "سقطرى")),
+        ("شبوة", ("shabwa", "شبوة")),
+        ("عدن", ("aden", "عدن")),
+        ("الضالع", ("dhala", "dali", "الضالع")),
+        ("الواحدي", ("wahidi", "balhaf", "الواحدي")),
+    ]
+    for region, terms in mapping:
+        if any(t in q for t in terms):
+            return region
+    return "الجنوب"
+
+
 def collect():
-    existing = load_existing()
-    seen = {x.get("id") for x in existing if x.get("id")}
-    found = collect_commons(seen) + collect_archive_org(seen)
-    combined = (found + existing)[:500]
+    existing_images = load_json(OUT, [])
+    existing_sources = load_json(SOURCES_OUT, [])
+    seen_images = {x.get("id") for x in existing_images if x.get("id")}
+    found_images = collect_commons(seen_images) + collect_archive_org(seen_images)
+    combined_images = (found_images + existing_images)[:500]
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(combined, f, ensure_ascii=False, indent=2)
-    print(f"Archive items added: {len(found)}; total: {len(combined)}")
+        json.dump(combined_images, f, ensure_ascii=False, indent=2)
+    print(f"Archive images added: {len(found_images)}; total: {len(combined_images)}")
+    collect_historical_sources(existing_sources)
 
 
 if __name__ == "__main__":
