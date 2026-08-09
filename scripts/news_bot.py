@@ -19,7 +19,7 @@ def relevant(title, summary): return any(k in f"{title} {summary}".lower() for k
 def make_item(title, source, link, published, summary, platform=None):
     title, link, summary = clean(title), clean(link), clean(summary)
     is_south = any(k in f"{title} {summary}".lower() for k in SOUTH_KEYWORDS)
-    return {"id": link, "title": title, "source": source, "source_url": link, "link": link, "published": published, "collected_at": datetime.now(timezone.utc).isoformat(), "category": "الجنوب" if is_south else "اليمن", "status": "published", "confidence": "source_verified", "auto_published": True, "summary": summary, "content": summary, "platform": platform or "news" , "embed_url": link if platform in ("X", "Facebook") else ""}
+    return {"id": link, "title": title, "source": source, "source_url": link, "link": link, "published": published, "collected_at": datetime.now(timezone.utc).isoformat(), "category": "الجنوب" if is_south else "اليمن", "status": "published", "confidence": "source_verified", "auto_published": True, "summary": summary, "content": summary, "platform": platform or "news", "embed_url": link if platform in ("X", "Facebook") else ""}
 
 os.makedirs("data", exist_ok=True)
 try:
@@ -27,6 +27,27 @@ try:
 except (FileNotFoundError, json.JSONDecodeError): existing = []
 seen = {x.get("link") for x in existing if x.get("link")}
 items = []
+
+# Demo item: inserted once so the internal article page can be tested safely.
+demo_link = "https://x.com/"
+if not any(x.get("id") == "demo-video-2026-08-09" for x in existing):
+    items.append({
+        "id": "demo-video-2026-08-09",
+        "title": "مثال تجريبي: خبر نشهل مع مقطع من X",
+        "source": "X — مثال تجريبي",
+        "source_url": demo_link,
+        "link": demo_link,
+        "published": "2026-08-09",
+        "collected_at": datetime.now(timezone.utc).isoformat(),
+        "category": "الجنوب",
+        "status": "demo",
+        "confidence": "demo",
+        "auto_published": False,
+        "summary": "خبر تجريبي لاختبار عرض المقطع والمحتوى داخل صفحة الخبر في نشهل.",
+        "content": "هذا خبر تجريبي فقط لاختبار النظام. عند وصول منشور حقيقي من حساب موثوق، سيقوم البوت بإنشاء صفحة خبر داخل نشهل مع إبقاء رابط المنشور الأصلي للمصدر. المقطع في الأخبار الحقيقية سيُعرض من المنصة الأصلية عندما يكون التضمين متاحًا.",
+        "platform": "X",
+        "embed_url": "https://x.com/"
+    })
 
 for source, url in FEEDS:
     try:
