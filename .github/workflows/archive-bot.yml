@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'scripts/archive_bot.py'
+      - 'scripts/resistance_index.py'
       - '.github/workflows/archive-bot.yml'
   schedule:
     - cron: '17 */6 * * *'
@@ -28,16 +29,18 @@ jobs:
         run: pip install requests
       - name: Search Wikimedia Commons and Internet Archive
         run: python scripts/archive_bot.py
-      - name: Commit archive index
+      - name: Build Southern resistance source index
+        run: python scripts/resistance_index.py
+      - name: Commit archive and history indexes
         run: |
           git config user.name 'nashhal-archive-bot'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/heritage-images.json data/historical-sources.json
+          git add data/heritage-images.json data/historical-sources.json data/resistance-events.json
           if git diff --cached --quiet; then
             echo 'لا توجد تحديثات جديدة في الأرشيف.'
             exit 0
           fi
-          git commit -m 'تحديث الأرشيف والمصادر التاريخية'
+          git commit -m 'تحديث الأرشيف وفهرس المقاومة التاريخية'
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
