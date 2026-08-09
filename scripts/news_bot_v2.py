@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """نشهل - جامع أخبار موثوقة مع تواريخ ومصادر وصفحات خبر داخلية."""
-import hashlib, html, json, os, re, time
-from datetime import datetime, timezone
+import hashlib, html, json, os, re
+from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
-from urllib.parse import urljoin
-import feedparser
 import requests
+import feedparser
 
 OUT = "data/news.json"
 MAX_ITEMS = 120
@@ -25,9 +24,9 @@ TRUSTED_FEEDS = [
 KEYWORDS = [
     "اليمن", "اليمني", "اليمنية", "عدن", "حضرموت", "شبوة", "أبين", "لحج",
     "الضالع", "المهرة", "سقطرى", "الجنوب", "الجنوبي", "القضية الجنوبية",
-    "الحوثي", "الحوثيون", "الحوثيين", "أنصار الله", "مجلس القيادة الرئاسي",
+    "المقاومة الجنوبية", "الحوثي", "الحوثيون", "الحوثيين", "أنصار الله", "مجلس القيادة الرئاسي",
 ]
-SOUTH = ["عدن", "حضرموت", "شبوة", "أبين", "لحج", "الضالع", "المهرة", "سقطرى", "الجنوب", "الجنوبي", "القضية الجنوبية"]
+SOUTH = ["عدن", "حضرموت", "شبوة", "أبين", "لحج", "الضالع", "المهرة", "سقطرى", "الجنوب", "الجنوبي", "القضية الجنوبية", "المقاومة الجنوبية"]
 
 HEADERS = {"User-Agent": "NahshalNews/2.0 (+https://nashhal.github.io/nashha/)"}
 
@@ -163,6 +162,94 @@ def collect_facebook():
         print(f"[WARN] Facebook: {exc}")
         return []
 
+def response_text(data):
+    parts = []
+    for item in data.get("output", []):
+        if item.get("type") != "message":
+            continue
+        for content in item.get("content", []):
+            if content.get("type") == "output_text":
+                parts.append(content.get("text", ""))
+    return "\n".join(parts).strip()
+
+def normalize_url(url):
+    return clean(url).rstrip("/")
+
+def collect_grok():
+    token = os.getenv("XAI_API_KEY")
+    if not token:
+        print("[INFO] XAI_API_KEY غير مضبوط؛ تخطي Grok")
+        return []
+    now = datetime.now(timezone.utc)
+    from_date = (now - timedelta(days=1)).date().isoformat()
+    to_date = now.date().isoformat()
+    prompt = """أنت محرر أخبار لمنصة نشهل اليمنية. ابحث الآن عن أحدث التطورات الموثوقة المتعلقة باليمن، مع أولوية خاصة للجنوب اليمني والمقاومة الجنوبية، باستخدام Web Search وX Search. ركّز على آخر 24 ساعة. لا تذكر أي خبر بلا مصدر يمكن فتحه، وتجنب الشائعات والآراء غير الموثقة والمحتوى المكرر.
+
+أعد النتيجة JSON فقط، بدون Markdown أو روابط استشهاد داخل النص، بهذا الشكل:
+[{"title":"...","summary":"...","source_name":"...","source_url":"https://...","published":"ISO-8601 أو فارغ","category":"الجنوب أو اليمن"}]
+
+قواعد صارمة:
+- بحد أقصى 8 أخبار.
+- كل عنصر يجب أن يحتوي عنوانًا وملخصًا قصيرًا ورابط مصدر مباشر صالحًا.
+- لا تخترع روابط أو أسماء مصادر.
+- يجب أن يكون source_url رابطًا لمصدر عثرت عليه أثناء البحث.
+- إذا لم تجد أخبارًا موثوقة، أعد [] فقط.
+- لا تنشئ خبرًا اعتمادًا على منشور X واحد غير مؤكد؛ استخدمه كإشارة، وحاول تأكيده من مصدر آخر عند الإمكان.
+- اكتب بالعربية وبصياغة خبرية محايدة."""
+    try:
+        r = requests.post(
+            "https://api.x.ai/v1/responses",
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+            json={
+                "model": "grok-4.5",
+                "input": [{"role": "user", "content": prompt}],
+                "tools": [
+                    {"type": "web_search"},
+                    {"type": "x_search", "from_date": from_date, "to_date": to_date},
+                ],
+                "include": ["no_inline_citations"],
+            },
+            timeout=120,
+        )
+        r.raise_for_status()
+        data = r.json()
+        text = response_text(data)
+        match = re.search(r"\[[\s\S]*\]", text)
+        if not match:
+            print("[WARN] Grok لم يُرجع JSON صالحًا")
+            return []
+        raw = json.loads(match.group(0))
+        if not isinstance(raw, list):
+            return []
+        citations = {normalize_url(u) for u in data.get("citations", []) if isinstance(u, str) and u.startswith(("http://", "https://"))}
+        result = []
+        for candidate in raw:
+            if not isinstance(candidate, dict):
+                continue
+            title = clean(candidate.get("title"))
+            summary = clean(candidate.get("summary"))
+            source_name = clean(candidate.get("source_name"))
+            source_url = clean(candidate.get("source_url"))
+            published = candidate.get("published") or ""
+            if not title or not summary or not source_name or not source_url.startswith(("http://", "https://")):
+                continue
+            if citations and normalize_url(source_url) not in citations:
+                print(f"[WARN] تجاهل Grok خبرًا برابط غير موجود ضمن المصادر: {source_url}")
+                continue
+            item = make_item("Grok / " + source_name, "grok_verified", title, source_url, summary, published)
+            if item:
+                item["source_name"] = source_name
+                item["source"] = source_name
+                item["source_type"] = "grok_verified"
+                item["confidence"] = "high"
+                item["auto_published"] = True
+                result.append(item)
+        print(f"[OK] Grok: {len(result)} خبرًا موثقًا")
+        return result
+    except Exception as exc:
+        print(f"[WARN] Grok: {exc}")
+        return []
+
 def dedupe(items):
     by_id = {}
     for item in items:
@@ -180,7 +267,7 @@ def main():
     except Exception:
         old = []
     existing = {x.get("id"): x for x in old if isinstance(x, dict) and x.get("id")}
-    fresh = collect_rss() + collect_x() + collect_facebook()
+    fresh = collect_rss() + collect_x() + collect_facebook() + collect_grok()
     for item in fresh:
         existing[item["id"]] = item
     final = dedupe(list(existing.values()))[:MAX_ITEMS]
