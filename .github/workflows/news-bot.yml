@@ -8,6 +8,11 @@ on:
 permissions:
   contents: write
 
+env:
+  X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+  FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+  FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+
 jobs:
   collect-news:
     runs-on: ubuntu-latest
@@ -21,9 +26,9 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install feedparser
+        run: pip install feedparser requests
 
-      - name: Collect RSS news
+      - name: Collect news from RSS, X and Facebook
         run: python scripts/news_bot.py
 
       - name: Commit news
