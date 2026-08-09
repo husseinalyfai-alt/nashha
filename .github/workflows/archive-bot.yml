@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -31,5 +33,11 @@ jobs:
           git config user.name 'nashhal-archive-bot'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/heritage-images.json
-          git diff --cached --quiet || git commit -m 'تحديث أرشيف الصور التاريخية'
-          git push
+          if git diff --cached --quiet; then
+            echo 'لا توجد تحديثات جديدة في الأرشيف.'
+            exit 0
+          fi
+          git commit -m 'تحديث أرشيف الصور التاريخية'
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
