@@ -15,9 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Fetch public RSS feeds
-        env:
-          PYTHONUNBUFFERED: '1'
+      - name: Fetch and classify public RSS news
         run: |
           python - <<'PY'
           import json, re, urllib.request, xml.etree.ElementTree as ET
@@ -28,70 +26,74 @@ jobs:
               ('الجنوب اليوم', 'https://aljanoubalyoum.tv/feed/'),
               ('الجزيرة', 'https://www.aljazeera.net/aljazeera/rss'),
           ]
-          path = Path('data/news.json')
-          try:
-              existing = json.loads(path.read_text(encoding='utf-8'))
-          except Exception:
-              existing = []
-          if not isinstance(existing, list): existing = []
+          regions = {
+              'عدن':['عدن','المعلا','التواهي','خور مكسر','المنصورة','الشيخ عثمان','كريتر','دار سعد','البريقة'],
+              'حضرموت':['حضرموت','المكلا','سيئون','تريم','الشحر','غيل باوزير','وادي حضرموت'],
+              'شبوة':['شبوة','عتق','بيحان','مرخة','نصاب','رضوم'],
+              'أبين':['أبين','زنجبار','خنفر','لودر','مودية','أحور','شقرة'],
+              'لحج':['لحج','الحوطة','طور الباحة','المضاربة','ردفان','يافع','المسيمير'],
+              'الضالع':['الضالع','قعطبة','الحصين','الشعيب','جحاف','الأزارق'],
+              'سقطرى':['سقطرى','حديبو'],
+              'المهرة':['المهرة','الغيضة','حوف','نشطون'],
+              'تعز':['تعز','المخا','التربة'],
+              'صنعاء':['صنعاء'],
+              'صعدة':['صعدة'],
+              'الحديدة':['الحديدة','حيس','الخوخة'],
+              'مأرب':['مأرب'],
+              'الجوف':['الجوف'],
+              'حجة':['حجة'],
+              'إب':['إب'],
+              'البيضاء':['البيضاء'],
+              'اليمن':['اليمن','يمني','اليمنية']
+          }
 
-          seen = {x.get('link') for x in existing if isinstance(x, dict)}
-          new_items = []
-          for source, url in feeds:
+          def classify(title, desc):
+              text = (title + ' ' + desc).lower()
+              for region, words in regions.items():
+                  if any(w.lower() in text for w in words):
+                      return region
+              return 'اليمن'
+
+          path = Path('data/news.json')
+          try: existing = json.loads(path.read_text(encoding='utf-8'))
+          except Exception: existing = []
+          if not isinstance(existing, list): existing=[]
+          seen={x.get('link') or x.get('source_url') for x in existing if isinstance(x,dict)}
+          new=[]
+          for source,url in feeds:
               try:
-                  req = urllib.request.Request(url, headers={'User-Agent':'NashhalNewsBot/1.0'})
-                  data = urllib.request.urlopen(req, timeout=20).read()
-                  root = ET.fromstring(data)
+                  req=urllib.request.Request(url,headers={'User-Agent':'NashhalNewsBot/1.0'})
+                  root=ET.fromstring(urllib.request.urlopen(req,timeout=20).read())
               except Exception as e:
-                  print(f'Feed failed: {source}: {e}')
-                  continue
+                  print('Feed failed:',source,e); continue
               for item in root.iter():
                   if item.tag.split('}')[-1] != 'item': continue
-                  def text(name):
+                  def txt(name):
                       for c in item:
-                          if c.tag.split('}')[-1] == name:
-                              return ''.join(c.itertext()).strip()
+                          if c.tag.split('}')[-1]==name: return ''.join(c.itertext()).strip()
                       return ''
-                  title = text('title')
-                  link = text('link')
-                  date = text('pubDate') or text('published') or text('updated')
-                  desc = re.sub(r'<[^>]+>', ' ', text('description')).strip()
+                  title,link,date=txt('title'),txt('link'),txt('pubDate') or txt('published') or txt('updated')
+                  desc=re.sub(r'<[^>]+>',' ',txt('description')).strip()
                   if not title or not link or link in seen: continue
-                  new_items.append({
-                      'id': 'rss-' + re.sub(r'[^a-zA-Z0-9]+','', link)[-20:],
-                      'title': title,
-                      'source': source,
-                      'source_name': source,
-                      'source_url': link,
-                      'link': link,
-                      'published': date,
-                      'published_at': date,
-                      'collected_at': datetime.now(timezone.utc).isoformat(),
-                      'category': 'الجنوب' if source == 'الجنوب اليوم' else 'اليمن',
-                      'status': 'published',
-                      'confidence': 'medium',
-                      'auto_published': True,
-                      'summary': desc[:500],
-                      'description': desc[:500],
-                      'content': desc[:500],
-                      'platform': 'rss',
-                      'source_type': 'يمني' if source == 'الجنوب اليوم' else 'دولي',
-                      'embed_url': ''
-                  })
+                  region=classify(title,desc)
+                  new.append({'id':'rss-'+re.sub(r'[^a-zA-Z0-9]+','',link)[-20:],'title':title,'source':source,'source_name':source,'source_url':link,'link':link,'published':date,'published_at':date,'collected_at':datetime.now(timezone.utc).isoformat(),'category':region,'region':region,'status':'published','confidence':'medium','auto_published':True,'summary':desc[:500],'description':desc[:500],'content':desc[:500],'platform':'rss','source_type':'يمني' if source=='الجنوب اليوم' else 'دولي','embed_url':''})
                   seen.add(link)
-                  if len(new_items) >= 20: break
-              if len(new_items) >= 20: break
+                  if len(new)>=20: break
+              if len(new)>=20: break
 
-          # Newest first; preserve existing records after them.
-          combined = new_items + existing
-          path.write_text(json.dumps(combined, ensure_ascii=False, indent=2), encoding='utf-8')
-          print(f'Added {len(new_items)} new RSS items')
+          # Also reclassify existing records so old articles get the same region field.
+          for item in existing:
+              if isinstance(item,dict):
+                  item['region']=classify(str(item.get('title','')),str(item.get('summary',item.get('description',''))))
+                  if item.get('category') in ('الجنوب','اليمن') or not item.get('category'): item['category']=item['region']
+          path.write_text(json.dumps(new+existing,ensure_ascii=False,indent=2),encoding='utf-8')
+          print('Added',len(new),'new items and classified news by region')
           PY
 
-      - name: Commit news updates
+      - name: Commit updates
         run: |
           git config user.name 'nashhal-news-bot'
           git config user.email 'actions@users.noreply.github.com'
           git add data/news.json
-          git diff --cached --quiet || git commit -m 'Update news from public RSS feeds'
+          git diff --cached --quiet || git commit -m 'Classify news by region'
           git push
