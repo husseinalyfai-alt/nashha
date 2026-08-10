@@ -1,0 +1,44 @@
+name: News Research
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare research instructions
+        run: |
+          mkdir -p .news
+          cat > .news/README.md <<'EOF'
+          # مراسل نهشل
+
+          هذا المسار مخصص لنظام جمع الأخبار والاستقصاء.
+
+          لا ينشر النظام أخبارًا من مصدر واحد على أنها مؤكدة. عند إضافة الأخبار يجب حفظ:
+          - العنوان
+          - الملخص
+          - المصدر
+          - رابط المصدر الأصلي
+          - تاريخ النشر
+          - وقت التحديث
+          - درجة التحقق
+
+          لا توجد مفاتيح API داخل المستودع. أي خدمة بحث خارجية يجب ربطها لاحقًا عبر GitHub Actions Secrets.
+          EOF
+
+      - name: Commit research scaffold
+        run: |
+          git config user.name 'nashhal-news-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add .news/README.md
+          git diff --cached --quiet || git commit -m 'Add news research scaffold'
+          git push
