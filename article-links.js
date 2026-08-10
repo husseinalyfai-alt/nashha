@@ -1,7 +1,7 @@
 (function(){
   function isInternalNav(a){
     const h=a.getAttribute('href')||'';
-    return !h || h.startsWith('#') || h.startsWith('javascript:') || h.startsWith('mailto:') || h.startsWith('tel:') || /^(https?:)?\/\/nashhal\.github\.io/i.test(h) || /article\.html/i.test(h);
+    return !h || a.hasAttribute('data-external') || h.startsWith('#') || h.startsWith('javascript:') || h.startsWith('mailto:') || h.startsWith('tel:') || /^(https?:)?\/\/nashhal\.github\.io/i.test(h) || /article\.html/i.test(h);
   }
   function isNewsLink(a){
     if(!a||isInternalNav(a)) return false;
