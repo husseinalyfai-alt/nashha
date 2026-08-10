@@ -15,30 +15,83 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Prepare research instructions
+      - name: Fetch public RSS feeds
+        env:
+          PYTHONUNBUFFERED: '1'
         run: |
-          mkdir -p .news
-          cat > .news/README.md <<'EOF'
-          # مراسل نهشل
+          python - <<'PY'
+          import json, re, urllib.request, xml.etree.ElementTree as ET
+          from datetime import datetime, timezone
+          from pathlib import Path
 
-          هذا المسار مخصص لنظام جمع الأخبار والاستقصاء.
+          feeds = [
+              ('الجنوب اليوم', 'https://aljanoubalyoum.tv/feed/'),
+              ('الجزيرة', 'https://www.aljazeera.net/aljazeera/rss'),
+          ]
+          path = Path('data/news.json')
+          try:
+              existing = json.loads(path.read_text(encoding='utf-8'))
+          except Exception:
+              existing = []
+          if not isinstance(existing, list): existing = []
 
-          لا ينشر النظام أخبارًا من مصدر واحد على أنها مؤكدة. عند إضافة الأخبار يجب حفظ:
-          - العنوان
-          - الملخص
-          - المصدر
-          - رابط المصدر الأصلي
-          - تاريخ النشر
-          - وقت التحديث
-          - درجة التحقق
+          seen = {x.get('link') for x in existing if isinstance(x, dict)}
+          new_items = []
+          for source, url in feeds:
+              try:
+                  req = urllib.request.Request(url, headers={'User-Agent':'NashhalNewsBot/1.0'})
+                  data = urllib.request.urlopen(req, timeout=20).read()
+                  root = ET.fromstring(data)
+              except Exception as e:
+                  print(f'Feed failed: {source}: {e}')
+                  continue
+              for item in root.iter():
+                  if item.tag.split('}')[-1] != 'item': continue
+                  def text(name):
+                      for c in item:
+                          if c.tag.split('}')[-1] == name:
+                              return ''.join(c.itertext()).strip()
+                      return ''
+                  title = text('title')
+                  link = text('link')
+                  date = text('pubDate') or text('published') or text('updated')
+                  desc = re.sub(r'<[^>]+>', ' ', text('description')).strip()
+                  if not title or not link or link in seen: continue
+                  new_items.append({
+                      'id': 'rss-' + re.sub(r'[^a-zA-Z0-9]+','', link)[-20:],
+                      'title': title,
+                      'source': source,
+                      'source_name': source,
+                      'source_url': link,
+                      'link': link,
+                      'published': date,
+                      'published_at': date,
+                      'collected_at': datetime.now(timezone.utc).isoformat(),
+                      'category': 'الجنوب' if source == 'الجنوب اليوم' else 'اليمن',
+                      'status': 'published',
+                      'confidence': 'medium',
+                      'auto_published': True,
+                      'summary': desc[:500],
+                      'description': desc[:500],
+                      'content': desc[:500],
+                      'platform': 'rss',
+                      'source_type': 'يمني' if source == 'الجنوب اليوم' else 'دولي',
+                      'embed_url': ''
+                  })
+                  seen.add(link)
+                  if len(new_items) >= 20: break
+              if len(new_items) >= 20: break
 
-          لا توجد مفاتيح API داخل المستودع. أي خدمة بحث خارجية يجب ربطها لاحقًا عبر GitHub Actions Secrets.
-          EOF
+          # Newest first; preserve existing records after them.
+          combined = new_items + existing
+          path.write_text(json.dumps(combined, ensure_ascii=False, indent=2), encoding='utf-8')
+          print(f'Added {len(new_items)} new RSS items')
+          PY
 
-      - name: Commit research scaffold
+      - name: Commit news updates
         run: |
           git config user.name 'nashhal-news-bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add .news/README.md
-          git diff --cached --quiet || git commit -m 'Add news research scaffold'
+          git add data/news.json
+          git diff --cached --quiet || git commit -m 'Update news from public RSS feeds'
           git push
