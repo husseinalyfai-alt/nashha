@@ -2,27 +2,52 @@
   const box=document.getElementById('cards');
   if(!box)return;
   const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const southToday=[
-    {id:'syt-2026-08-05-1',title:'مهرجان خريف حجر يحقق تداولاً تجارياً بـ235 مليون ريال',date:'5 أغسطس 2026',link:'https://aljanoubalyoum.tv/',summary:'حقق مهرجان خريف حجر السنوي في موسمه الثالث تداولاً تجارياً تجاوز 235 مليون ريال، واستقطب نحو 40 ألفاً و840 زائراً، وفق قناة الجنوب اليوم.'},
-    {id:'syt-2026-08-05-2',title:'وزير الأشغال ومحافظ عدن يدشنان مشروع صيانة جسر البريقة وتأهيل كورنيش كود النمر',date:'5 أغسطس 2026',link:'https://aljanoubalyoum.tv/',summary:'دُشن مشروع صيانة وترميم جسر البريقة القديم وتأهيل كورنيش كود النمر في العاصمة عدن، بتمويل من صندوق صيانة الطرق والجسور.'},
-    {id:'syt-2026-08-05-3',title:'وزارة النقل تدين استهداف سفينة شحن هندية في البحر الأحمر',date:'5 أغسطس 2026',link:'https://aljanoubalyoum.tv/',summary:'وزارة النقل أدانت استهداف سفينة شحن هندية في البحر الأحمر، مؤكدة أن استهداف السفن التجارية يهدد أمن الملاحة البحرية.'},
-    {id:'syt-2026-08-05-4',title:'القوات المسلحة الجنوبية تُسقط طائرة مسيّرة حوثية شمالي لحج',date:'5 أغسطس 2026',link:'https://aljanoubalyoum.tv/',summary:'أفادت قناة الجنوب اليوم بأن الدفاعات الجوية للقوات المسلحة الجنوبية أسقطت طائرة مسيّرة شمالي محافظة لحج.'},
-    {id:'syt-2026-08-05-5',title:'مجلس القيادة الرئاسي يشدد على تعزيز الإصلاحات الاقتصادية',date:'5 أغسطس 2026',link:'https://aljanoubalyoum.tv/',summary:'ناقش مجلس القيادة الرئاسي التطورات الأمنية والاقتصادية والإصلاحات المالية ومستوى الجاهزية العسكرية والأمنية.'},
-    {id:'syt-2026-08-03-1',title:'تحذيرات من أمطار رعدية واضطراب شديد للبحر في عدة محافظات',date:'3 أغسطس 2026',link:'https://aljanoubalyoum.tv/',summary:'توقع مركز التنبؤات الجوية أمطاراً رعدية متفرقة وأجواء شديدة الحرارة في عدد من المحافظات، مع تحذيرات من اضطراب البحر.'}
-  ];
+  const regionImage={
+    'عدن':'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80',
+    'حضرموت':'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80',
+    'شبوة':'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80',
+    'أبين':'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80',
+    'لحج':'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80',
+    'الضالع':'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80',
+    'سقطرى':'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80',
+    'المهرة':'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80'
+  };
+  const fallback='logo.jpg';
+  const southToday=[];
+  function regionOf(x){
+    const direct=x.region||x.category||'';
+    if(regionImage[direct])return direct;
+    const text=((x.title||'')+' '+(x.summary||'')+' '+(x.description||'')).toLowerCase();
+    for(const r of Object.keys(regionImage)) if(text.includes(r.toLowerCase())) return r;
+    return 'الجنوب';
+  }
   try{
     const r=await fetch('data/news.json?v='+Date.now(),{cache:'no-store'});
     if(!r.ok)throw new Error('news unavailable');
     const data=await r.json();
     const items=Array.isArray(data)?data:(data.news||[]);
-    const south=items.filter(x=>/عدن|حضرموت|شبوة|أبين|لحج|الضالع|المهرة|سقطرى|الجنوب|الجنوبي/i.test((x.title||'')+' '+(x.summary||''))).slice(0,6);
-    const local=south.map(x=>({title:x.title,source:x.source||x.source_name||'المصدر',date:x.published||x.date||x.published_at||'',summary:x.summary||x.description||'',href:'article.html?id='+encodeURIComponent(x.id||x.url||x.link||'')}));
-    const channel=southToday.map(x=>({title:x.title,source:'قناة الجنوب اليوم',date:x.date,summary:x.summary,href:x.link,external:true}));
-    const all=[...channel,...local].slice(0,12);
+    const south=items.filter(x=>/عدن|حضرموت|شبوة|أبين|لحج|الضالع|المهرة|سقطرى|الجنوب|الجنوبي/i.test((x.title||'')+' '+(x.summary||'')+' '+(x.region||''))).slice(0,12);
+    const all=south.map(x=>{
+      const region=regionOf(x);
+      return {title:x.title,source:x.source||x.source_name||'المصدر',date:x.published||x.date||x.published_at||'',summary:x.summary||x.description||'',href:'article.html?id='+encodeURIComponent(x.id||x.url||x.link||''),image:x.image||x.image_url||x.thumbnail||regionImage[region]||fallback,region};
+    });
     box.innerHTML=all.map(x=>{
       const href=esc(x.href);
-      const attrs=x.external?' data-external="true" target="_blank" rel="noopener noreferrer"':'';
-      return `<article class="card"><a class="card-image" href="${href}"${attrs}><img src="logo.jpg" alt="${esc(x.title)}" loading="lazy"></a><div class="card-body"><div class="label">${esc(x.source)}</div><h3><a href="${href}"${attrs}>${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><div class="card-meta">المصدر: ${esc(x.source)} · ${esc(x.date)}</div></div></article>`;
+      return `<article class="card"><a class="card-image" href="${href}"><img src="${esc(x.image)}" alt="${esc(x.title)}" loading="lazy" onerror="this.src='${fallback}'"><span class="tag">${esc(x.region)}</span></a><div class="card-body"><div class="label">${esc(x.source)}</div><h3><a href="${href}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><div class="card-meta">${esc(x.region)} · المصدر: ${esc(x.source)} · ${esc(x.date)}</div></div></article>`;
     }).join('');
+
+    // Make regional navigation filter the news cards.
+    document.querySelectorAll('.nav a, .section-grid a').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const label=(a.textContent||'').trim();
+        if(!regionImage[label])return;
+        e.preventDefault();
+        const filtered=all.filter(x=>x.region===label);
+        box.innerHTML=(filtered.length?filtered:all).map(x=>{
+          const href=esc(x.href); return `<article class="card"><a class="card-image" href="${href}"><img src="${esc(x.image)}" alt="${esc(x.title)}" loading="lazy" onerror="this.src='${fallback}'"><span class="tag">${esc(x.region)}</span></a><div class="card-body"><div class="label">${esc(x.source)}</div><h3><a href="${href}">${esc(x.title)}</a></h3><p>${esc(x.summary)}</p><div class="card-meta">${esc(x.region)} · ${esc(x.date)}</div></div></article>`;
+        }).join('');
+        document.getElementById('news')?.scrollIntoView({behavior:'smooth'});
+      });
+    });
   }catch(e){console.warn('News feed unavailable',e)}
 })();
