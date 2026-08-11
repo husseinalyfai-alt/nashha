@@ -1,5 +1,47 @@
 [
   {
+    "id": "4d40eccc6627562b5bab",
+    "title": "الخنبشي يناقش سبل تشجيع الطلاب على الالتحاق بكليات التربية في جامعة حضرموت",
+    "source": "سبأ",
+    "source_name": "سبأ",
+    "source_url": "http://www.sabanew.net/viewstory/150661",
+    "link": "http://www.sabanew.net/viewstory/150661",
+    "published": "2026-08-11T09:18:26+00:00",
+    "published_at": "2026-08-11T09:18:26+00:00",
+    "collected_at": "2026-08-11T11:31:18.045898+00:00",
+    "category": "الجنوب",
+    "status": "published",
+    "confidence": "high",
+    "auto_published": true,
+    "summary": "",
+    "description": "",
+    "content": "",
+    "platform": "news",
+    "source_type": "يمني",
+    "embed_url": ""
+  },
+  {
+    "id": "dda8d2290d51ac20be4c",
+    "title": "القوات المسلحة تحبط محاولة تسلل لمليشيا الحوثي في جبهة الكريفات بتعز وتعتقل عدد منهم",
+    "source": "سبأ",
+    "source_name": "سبأ",
+    "source_url": "http://www.sabanew.net/viewstory/150660",
+    "link": "http://www.sabanew.net/viewstory/150660",
+    "published": "2026-08-11T09:11:45+00:00",
+    "published_at": "2026-08-11T09:11:45+00:00",
+    "collected_at": "2026-08-11T11:31:18.045955+00:00",
+    "category": "اليمن",
+    "status": "published",
+    "confidence": "high",
+    "auto_published": true,
+    "summary": "",
+    "description": "",
+    "content": "",
+    "platform": "news",
+    "source_type": "يمني",
+    "embed_url": ""
+  },
+  {
     "id": "south-frontlines-20260810",
     "title": "جبهات الجنوب ضد الحوثي — أحداث آخر يومين (9–10 أغسطس 2026)",
     "source": "نهشل",
@@ -38,8 +80,8 @@
     "link": "http://www.sabanew.net/viewstory/150649",
     "published": "2026-08-10T18:46:12+00:00",
     "published_at": "2026-08-10T18:46:12+00:00",
-    "collected_at": "2026-08-11T08:32:19.736879+00:00",
-    "category": "تعز",
+    "collected_at": "2026-08-11T11:31:18.046048+00:00",
+    "category": "اليمن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -48,11 +90,7 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": "",
-    "region": "تعز",
-    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
-    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
-    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
+    "embed_url": ""
   },
   {
     "id": "27b3888b6e43f1224b8f",
@@ -63,8 +101,8 @@
     "link": "http://www.sabanew.net/viewstory/150647",
     "published": "2026-08-10T18:43:11+00:00",
     "published_at": "2026-08-10T18:43:11+00:00",
-    "collected_at": "2026-08-11T08:32:19.736922+00:00",
-    "category": "لحج",
+    "collected_at": "2026-08-11T11:31:18.046090+00:00",
+    "category": "الجنوب",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -73,11 +111,7 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": "",
-    "region": "لحج",
-    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
-    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
-    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
+    "embed_url": ""
   },
   {
     "id": "cb529cdfe471b6f991b8",
@@ -88,8 +122,8 @@
     "link": "http://www.sabanew.net/viewstory/150645",
     "published": "2026-08-10T15:49:26+00:00",
     "published_at": "2026-08-10T15:49:26+00:00",
-    "collected_at": "2026-08-11T08:32:19.736955+00:00",
-    "category": "أبين",
+    "collected_at": "2026-08-11T11:31:18.046131+00:00",
+    "category": "الجنوب",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -98,11 +132,7 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": "",
-    "region": "أبين",
-    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178637696658962918.jpeg",
-    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178637696658962918.jpeg",
-    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178637696658962918.jpeg"
+    "embed_url": ""
   },
   {
     "id": "adcdf3cff98cf33f5f46",
@@ -113,8 +143,8 @@
     "link": "http://www.sabanew.net/viewstory/150644",
     "published": "2026-08-10T15:32:33+00:00",
     "published_at": "2026-08-10T15:32:33+00:00",
-    "collected_at": "2026-08-11T08:32:19.736987+00:00",
-    "category": "تعز",
+    "collected_at": "2026-08-11T11:31:18.046171+00:00",
+    "category": "اليمن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -123,11 +153,7 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": "",
-    "region": "تعز",
-    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178637595310819408.jpeg",
-    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178637595310819408.jpeg",
-    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178637595310819408.jpeg"
+    "embed_url": ""
   },
   {
     "id": "f13bbcf9d94d65471a49",
@@ -163,7 +189,7 @@
     "link": "http://www.sabanew.net/viewstory/150638",
     "published": "2026-08-10T13:58:07+00:00",
     "published_at": "2026-08-10T13:58:07+00:00",
-    "collected_at": "2026-08-11T08:32:19.737018+00:00",
+    "collected_at": "2026-08-11T11:31:18.046238+00:00",
     "category": "اليمن",
     "status": "published",
     "confidence": "high",
@@ -173,11 +199,7 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": "",
-    "region": "اليمن",
-    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178637028769364124.jpeg",
-    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178637028769364124.jpeg",
-    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178637028769364124.jpeg"
+    "embed_url": ""
   },
   {
     "id": "8ac146b4d26ea0732823",
@@ -188,8 +210,8 @@
     "link": "http://www.sabanew.net/viewstory/150637",
     "published": "2026-08-10T13:51:38+00:00",
     "published_at": "2026-08-10T13:51:38+00:00",
-    "collected_at": "2026-08-11T08:32:19.737049+00:00",
-    "category": "شبوة",
+    "collected_at": "2026-08-11T11:31:18.046274+00:00",
+    "category": "الجنوب",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -198,11 +220,7 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": "",
-    "region": "شبوة",
-    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
-    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
-    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
+    "embed_url": ""
   },
   {
     "id": "b015ac1aeb27bddf177d",
@@ -213,7 +231,7 @@
     "link": "http://www.sabanew.net/viewstory/150636",
     "published": "2026-08-10T13:39:10+00:00",
     "published_at": "2026-08-10T13:39:10+00:00",
-    "collected_at": "2026-08-11T08:32:19.737080+00:00",
+    "collected_at": "2026-08-11T11:31:18.046313+00:00",
     "category": "اليمن",
     "status": "published",
     "confidence": "high",
@@ -223,11 +241,7 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": "",
-    "region": "اليمن",
-    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178636915011771802.jpeg",
-    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178636915011771802.jpeg",
-    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178636915011771802.jpeg"
+    "embed_url": ""
   },
   {
     "id": "5158e72f8a7b173ef3a6",
@@ -238,7 +252,7 @@
     "link": "http://www.sabanew.net/viewstory/150634",
     "published": "2026-08-10T13:30:34+00:00",
     "published_at": "2026-08-10T13:30:34+00:00",
-    "collected_at": "2026-08-11T08:32:19.737109+00:00",
+    "collected_at": "2026-08-11T11:31:18.046350+00:00",
     "category": "اليمن",
     "status": "published",
     "confidence": "high",
@@ -248,11 +262,7 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": "",
-    "region": "اليمن",
-    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178636863443567445.jpeg",
-    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178636863443567445.jpeg",
-    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178636863443567445.jpeg"
+    "embed_url": ""
   },
   {
     "id": "d1deb3be17a1d4a1985c",
@@ -263,8 +273,8 @@
     "link": "http://www.sabanew.net/viewstory/150633",
     "published": "2026-08-10T13:29:22+00:00",
     "published_at": "2026-08-10T13:29:22+00:00",
-    "collected_at": "2026-08-11T08:32:19.737136+00:00",
-    "category": "شبوة",
+    "collected_at": "2026-08-11T11:31:18.046385+00:00",
+    "category": "الجنوب",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -273,11 +283,7 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": "",
-    "region": "شبوة",
-    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178636856217202147.jpg",
-    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178636856217202147.jpg",
-    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178636856217202147.jpg"
+    "embed_url": ""
   },
   {
     "id": "bab7227d934449bba7c5",
@@ -288,8 +294,8 @@
     "link": "http://www.sabanew.net/viewstory/150631",
     "published": "2026-08-10T13:15:33+00:00",
     "published_at": "2026-08-10T13:15:33+00:00",
-    "collected_at": "2026-08-11T08:32:19.737187+00:00",
-    "category": "لحج",
+    "collected_at": "2026-08-11T11:31:18.046449+00:00",
+    "category": "الجنوب",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -298,11 +304,7 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": "",
-    "region": "لحج",
-    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178636773397272538.jpeg",
-    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178636773397272538.jpeg",
-    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178636773397272538.jpeg"
+    "embed_url": ""
   },
   {
     "id": "8e4ca8c3369833a20fc8",
@@ -313,8 +315,8 @@
     "link": "http://www.sabanew.net/viewstory/150629",
     "published": "2026-08-10T13:05:47+00:00",
     "published_at": "2026-08-10T13:05:47+00:00",
-    "collected_at": "2026-08-11T08:32:19.737249+00:00",
-    "category": "عدن",
+    "collected_at": "2026-08-11T11:31:18.046509+00:00",
+    "category": "الجنوب",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -323,11 +325,7 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": "",
-    "region": "عدن",
-    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
-    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
-    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
+    "embed_url": ""
   },
   {
     "id": "9b1bb7c00804b840f359",
@@ -438,8 +436,8 @@
     "link": "https://www.bbc.com/arabic/articles/cj4kzz1jqklo?at_medium=RSS&at_campaign=rss",
     "published": "2026-08-09T16:54:55+00:00",
     "published_at": "2026-08-09T16:54:55+00:00",
-    "collected_at": "2026-08-11T08:32:18.650694+00:00",
-    "category": "تعز",
+    "collected_at": "2026-08-11T11:31:17.512282+00:00",
+    "category": "اليمن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -448,11 +446,7 @@
     "content": "تتصاعد المخاوف من عودة الحرب على نطاق واسع في اليمن، بعد سلسلة من الهجمات والهجمات المضادة بين جماعة أنصار الله الحوثية والقوات التابعة للحكومة اليمنية المعترف بها دوليا، بالتزامن مع تجدد المواجهة المباشرة بين الحوثيين والسعودية، في أخطر تصعيد يشهده الصراع اليمني منذ سنوات.",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": "",
-    "region": "تعز",
-    "image": "https://ichef.bbci.co.uk/news/1200/branded_arabic/9a96/live/46bcf6e0-9411-11f1-a7ab-8b30adf0800a.jpg",
-    "image_url": "https://ichef.bbci.co.uk/news/1200/branded_arabic/9a96/live/46bcf6e0-9411-11f1-a7ab-8b30adf0800a.jpg",
-    "thumbnail": "https://ichef.bbci.co.uk/news/1200/branded_arabic/9a96/live/46bcf6e0-9411-11f1-a7ab-8b30adf0800a.jpg"
+    "embed_url": ""
   },
   {
     "id": "south-today-20260806-001",
