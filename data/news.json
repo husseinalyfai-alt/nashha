@@ -9,7 +9,7 @@
     "published": "2026-08-14T17:17:21+00:00",
     "published_at": "2026-08-14T17:17:21+00:00",
     "collected_at": "2026-08-14T18:09:57.180351+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -18,7 +18,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178672784150501630.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178672784150501630.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178672784150501630.jpeg"
   },
   {
     "id": "720ddb5431c6063d2a1a",
@@ -30,7 +34,7 @@
     "published": "2026-08-14T17:14:20+00:00",
     "published_at": "2026-08-14T17:14:20+00:00",
     "collected_at": "2026-08-14T18:09:57.180408+00:00",
-    "category": "اليمن",
+    "category": "تعز",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -39,7 +43,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "تعز",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178672766034445652.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178672766034445652.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178672766034445652.jpeg"
   },
   {
     "id": "5ef3772d7be09643fd2a",
@@ -60,7 +68,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178672430998685530.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178672430998685530.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178672430998685530.jpeg"
   },
   {
     "id": "f2498c17cbdd1c3a6c80",
@@ -72,7 +84,7 @@
     "published": "2026-08-14T16:15:20+00:00",
     "published_at": "2026-08-14T16:15:20+00:00",
     "collected_at": "2026-08-14T18:09:57.180536+00:00",
-    "category": "الجنوب",
+    "category": "لحج",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -81,7 +93,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "لحج",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "ec990f1e03414b6a15ed",
@@ -102,7 +118,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "97541a0029922b4ccb91",
@@ -123,7 +143,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178672387640538585.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178672387640538585.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178672387640538585.jpeg"
   },
   {
     "id": "8211bc0310edf0449f96",
@@ -144,7 +168,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178671314221902591.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178671314221902591.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178671314221902591.jpeg"
   },
   {
     "id": "116ab2552612e960f83a",
@@ -165,7 +193,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178671289623579169.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178671289623579169.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178671289623579169.jpeg"
   },
   {
     "id": "c5809ec11ba578689b3e",
@@ -186,7 +218,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178671258983085641.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178671258983085641.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178671258983085641.png"
   },
   {
     "id": "f4e5461269984016a329",
@@ -207,7 +243,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "f1be8b2d75d719019bca",
@@ -219,7 +259,7 @@
     "published": "2026-08-14T12:57:15+00:00",
     "published_at": "2026-08-14T12:57:15+00:00",
     "collected_at": "2026-08-14T18:09:57.180832+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -228,7 +268,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178671223598267937.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178671223598267937.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178671223598267937.jpeg"
   },
   {
     "id": "e3134c90a0e562e51e6f",
@@ -240,7 +284,7 @@
     "published": "2026-08-14T12:07:06+00:00",
     "published_at": "2026-08-14T12:07:06+00:00",
     "collected_at": "2026-08-14T18:09:56.117438+00:00",
-    "category": "الجنوب",
+    "category": "اليمن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -249,7 +293,11 @@
     "content": "يدخل حظر تربية الكلاب وذبحها وبيعها للاستهلاك البشري بكوريا الجنوبية حيز التنفيذ، الجمعة، في خطوة تعكس التراجع المستمر في استهلاك لحوم الكلاب بالبلاد خلال السنوات الأخيرة. ويأتي ذلك في ظل تحول الرأي العام، مدفوعا بتزايد الإقبال على تربية الحيوانات الأليفة وتنامي الوعي بقضايا الرفق بالحيوان.",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://s.france24.com/media/display/4c3fb23a-97cf-11f1-84ed-005056a97e36/w:1280/p:16x9/000-B8927KG.jpg",
+    "image_url": "https://s.france24.com/media/display/4c3fb23a-97cf-11f1-84ed-005056a97e36/w:1280/p:16x9/000-B8927KG.jpg",
+    "thumbnail": "https://s.france24.com/media/display/4c3fb23a-97cf-11f1-84ed-005056a97e36/w:1280/p:16x9/000-B8927KG.jpg"
   },
   {
     "id": "ece914ec21c06dd7bbd1",
@@ -261,7 +309,7 @@
     "published": "2026-08-14T12:06:17+00:00",
     "published_at": "2026-08-14T12:06:17+00:00",
     "collected_at": "2026-08-14T18:09:57.180989+00:00",
-    "category": "اليمن",
+    "category": "تعز",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -270,7 +318,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "تعز",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178670917793905753.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178670917793905753.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178670917793905753.jpeg"
   },
   {
     "id": "6769500edffd670fab27",
@@ -291,7 +343,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178670817657993060.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178670817657993060.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178670817657993060.jpeg"
   },
   {
     "id": "4933bec66e0d5ad638ba",
@@ -303,7 +359,7 @@
     "published": "2026-08-14T11:35:26+00:00",
     "published_at": "2026-08-14T11:35:26+00:00",
     "collected_at": "2026-08-14T15:10:47.539722+00:00",
-    "category": "اليمن",
+    "category": "تعز",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -312,7 +368,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "تعز",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178670732636205295.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178670732636205295.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178670732636205295.jpeg"
   },
   {
     "id": "2364b6ae6efa620abb56",
@@ -324,7 +384,7 @@
     "published": "2026-08-13T19:00:24+00:00",
     "published_at": "2026-08-13T19:00:24+00:00",
     "collected_at": "2026-08-14T15:10:47.539784+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -333,7 +393,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "f03893b02c0fe633ddc6",
@@ -345,7 +409,7 @@
     "published": "2026-08-13T18:35:14+00:00",
     "published_at": "2026-08-13T18:35:14+00:00",
     "collected_at": "2026-08-14T15:10:47.539823+00:00",
-    "category": "الجنوب",
+    "category": "المهرة",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -354,7 +418,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "المهرة",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "705cae033678a854015d",
@@ -375,7 +443,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178663792315572689.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178663792315572689.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178663792315572689.jpeg"
   },
   {
     "id": "3c406e5df85f7588d846",
@@ -387,7 +459,7 @@
     "published": "2026-08-13T15:39:47+00:00",
     "published_at": "2026-08-13T15:39:47+00:00",
     "collected_at": "2026-08-14T15:10:47.539901+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -396,7 +468,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178663558769702230.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178663558769702230.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178663558769702230.jpeg"
   },
   {
     "id": "42c815bf83fcd9e435d7",
@@ -408,7 +484,7 @@
     "published": "2026-08-13T15:01:53+00:00",
     "published_at": "2026-08-13T15:01:53+00:00",
     "collected_at": "2026-08-14T15:10:47.539937+00:00",
-    "category": "الجنوب",
+    "category": "الضالع",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -417,7 +493,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "الضالع",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178663513693411621.jpg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178663513693411621.jpg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178663513693411621.jpg"
   },
   {
     "id": "c4fb73828f734fc1596e",
@@ -429,7 +509,7 @@
     "published": "2026-08-13T15:00:00+00:00",
     "published_at": "2026-08-13T15:00:00+00:00",
     "collected_at": "2026-08-14T15:10:47.539974+00:00",
-    "category": "الجنوب",
+    "category": "المهرة",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -438,7 +518,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "المهرة",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "0dbecfae5f3707a88d01",
