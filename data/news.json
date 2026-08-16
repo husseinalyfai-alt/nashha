@@ -9,7 +9,7 @@
     "published": "2026-08-15T22:58:04+00:00",
     "published_at": "2026-08-15T22:58:04+00:00",
     "collected_at": "2026-08-16T00:01:42.008959+00:00",
-    "category": "اليمن",
+    "category": "مأرب",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -18,7 +18,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "مأرب",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178683468489306290.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178683468489306290.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178683468489306290.jpeg"
   },
   {
     "id": "5648dab4daf8038fbf29",
@@ -30,7 +34,7 @@
     "published": "2026-08-15T18:48:54+00:00",
     "published_at": "2026-08-15T18:48:54+00:00",
     "collected_at": "2026-08-16T00:01:42.009023+00:00",
-    "category": "اليمن",
+    "category": "تعز",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -39,7 +43,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "تعز",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178681973481507245.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178681973481507245.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178681973481507245.jpeg"
   },
   {
     "id": "6cc34a01ad19ecbf179e",
@@ -51,7 +59,7 @@
     "published": "2026-08-15T18:24:37+00:00",
     "published_at": "2026-08-15T18:24:37+00:00",
     "collected_at": "2026-08-16T00:01:41.305064+00:00",
-    "category": "الجنوب",
+    "category": "تعز",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -60,7 +68,11 @@
     "content": "عرض رئيس كوريا الجنوبية لي جاي ميونغ السبت إجراء محادثات مع كوريا الشمالية من أجل وضع حد رسمي للحرب الكورية، في وقت تعزز بيونغ يانغ علاقاتها مع روسيا وترسخ وضعها كقوة نووية. وجاء العرض في ذكرى تحرير كوريا من الاستعمار الياباني، حيث دعا الزعيم الكوري الجنوبي إلى وضع \"نوايا التهديد\" جانباً والبدء بمحادثات مباشرة بين الطرفين لإنهاء الحرب الممتدة منذ عقود.",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "تعز",
+    "image": "https://s.france24.com/media/display/38fab6c2-d013-11f0-9c82-005056a90284/w:1280/p:16x9/AP25337125067624.jpg",
+    "image_url": "https://s.france24.com/media/display/38fab6c2-d013-11f0-9c82-005056a90284/w:1280/p:16x9/AP25337125067624.jpg",
+    "thumbnail": "https://s.france24.com/media/display/38fab6c2-d013-11f0-9c82-005056a90284/w:1280/p:16x9/AP25337125067624.jpg"
   },
   {
     "id": "415d3fe07eca776e72cb",
@@ -81,7 +93,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178681548360484598.jpg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178681548360484598.jpg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178681548360484598.jpg"
   },
   {
     "id": "b9784828a6a5332bf16e",
@@ -102,7 +118,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178681410996412984.jpg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178681410996412984.jpg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178681410996412984.jpg"
   },
   {
     "id": "2b676f33101cfbb78f32",
@@ -114,7 +134,7 @@
     "published": "2026-08-15T16:18:43+00:00",
     "published_at": "2026-08-15T16:18:43+00:00",
     "collected_at": "2026-08-16T00:01:42.009228+00:00",
-    "category": "الجنوب",
+    "category": "لحج",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -123,7 +143,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "لحج",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178681072376435089.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178681072376435089.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178681072376435089.jpeg"
   },
   {
     "id": "d600116952f14e75ba84",
@@ -135,7 +159,7 @@
     "published": "2026-08-15T16:16:43+00:00",
     "published_at": "2026-08-15T16:16:43+00:00",
     "collected_at": "2026-08-16T00:01:42.009301+00:00",
-    "category": "الجنوب",
+    "category": "شبوة",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -144,7 +168,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "شبوة",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "ed9417c44b6b6acecaa6",
@@ -165,7 +193,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "1c1107bb191f061a2354",
@@ -177,7 +209,7 @@
     "published": "2026-08-15T13:02:58+00:00",
     "published_at": "2026-08-15T13:02:58+00:00",
     "collected_at": "2026-08-16T00:01:42.009432+00:00",
-    "category": "الجنوب",
+    "category": "الضالع",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -186,7 +218,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "الضالع",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "272b241a2375ef600cde",
@@ -198,7 +234,7 @@
     "published": "2026-08-15T08:08:18+00:00",
     "published_at": "2026-08-15T08:08:18+00:00",
     "collected_at": "2026-08-16T00:01:41.081810+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -207,7 +243,11 @@
     "content": "ساهم عدم الاستقرار العالمي والصراعات وانعدام الثقة بالدولار الأمريكي في هذا الارتفاع، كما دفع الدول إلى تكديس المعدن النفيس.",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://ichef.bbci.co.uk/news/1200/branded_arabic/1d3c/live/ae764830-987c-11f1-a7ab-8b30adf0800a.jpg",
+    "image_url": "https://ichef.bbci.co.uk/news/1200/branded_arabic/1d3c/live/ae764830-987c-11f1-a7ab-8b30adf0800a.jpg",
+    "thumbnail": "https://ichef.bbci.co.uk/news/1200/branded_arabic/1d3c/live/ae764830-987c-11f1-a7ab-8b30adf0800a.jpg"
   },
   {
     "id": "cbcb5e933c0608a8f9db",
@@ -219,7 +259,7 @@
     "published": "2026-08-15T05:09:27+00:00",
     "published_at": "2026-08-15T05:09:27+00:00",
     "collected_at": "2026-08-16T00:01:41.305825+00:00",
-    "category": "اليمن",
+    "category": "تعز",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -228,7 +268,11 @@
     "content": "شهد السبت موجة تصعيد عسكري ودبلوماسي في أكثر من جبهة بالشرق الأوسط؛ إذ أعلنت السلطات اللبنانية مقتل 11 شخصاً بينهم أطفال في غارات إسرائيلية على جنوب البلاد، في وقت هدد فيه حزب الله بالرد ودعا إلى وقف المفاوضات \"المذلة\" التي تقودها بيروت مع الحكومة الإسرائيلية. بينما توعد الحوثيون باستهداف السفن الأمريكية في البحر الأحمر، وأعلن مدير ميناء المخا اليمني وقف العمليات عقب هجمات للحوثيين، في ظل تصريحات أمريكية بشأن مضيق هرمز، وتصعيد إيراني جديد يطلب الإفراج عن طيارين محتجزين في قطر.",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "تعز",
+    "image": "https://s.france24.com/media/display/d269cd40-987f-11f1-afd3-005056bf30b7/w:1280/p:16x9/AP26227254141545.jpg",
+    "image_url": "https://s.france24.com/media/display/d269cd40-987f-11f1-afd3-005056bf30b7/w:1280/p:16x9/AP26227254141545.jpg",
+    "thumbnail": "https://s.france24.com/media/display/d269cd40-987f-11f1-afd3-005056bf30b7/w:1280/p:16x9/AP26227254141545.jpg"
   },
   {
     "id": "590005e6df4617489a86",
@@ -240,7 +284,7 @@
     "published": "2026-08-15T01:58:57+00:00",
     "published_at": "2026-08-15T01:58:57+00:00",
     "collected_at": "2026-08-16T00:01:42.009527+00:00",
-    "category": "اليمن",
+    "category": "تعز",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -249,7 +293,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "تعز",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178675913787805224.jpg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178675913787805224.jpg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178675913787805224.jpg"
   },
   {
     "id": "29e7079c669b693e3524",
@@ -270,7 +318,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178674230638371197.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178674230638371197.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178674230638371197.jpeg"
   },
   {
     "id": "ff61a2a047e2d6d50bf2",
@@ -291,7 +343,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178673884593058336.jpg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178673884593058336.jpg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178673884593058336.jpg"
   },
   {
     "id": "c9f1cea143b1756d6a65",
@@ -303,7 +359,7 @@
     "published": "2026-08-14T20:10:09+00:00",
     "published_at": "2026-08-14T20:10:09+00:00",
     "collected_at": "2026-08-16T00:01:42.009686+00:00",
-    "category": "الجنوب",
+    "category": "حضرموت",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -312,7 +368,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "حضرموت",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "6b5aa9de05211e132ce1",
@@ -349,7 +409,7 @@
     "published": "2026-08-14T18:58:56+00:00",
     "published_at": "2026-08-14T18:58:56+00:00",
     "collected_at": "2026-08-16T00:01:42.009756+00:00",
-    "category": "اليمن",
+    "category": "تعز",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -358,7 +418,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "تعز",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178674244552543314.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178674244552543314.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178674244552543314.jpeg"
   },
   {
     "id": "518bf6d77161807d4b6e",
@@ -379,7 +443,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178673357316612159.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178673357316612159.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178673357316612159.jpeg"
   },
   {
     "id": "3a382cda4fa5bbfce9f5",
@@ -691,7 +759,7 @@
     "published": "2026-08-14T12:07:06+00:00",
     "published_at": "2026-08-14T12:07:06+00:00",
     "collected_at": "2026-08-15T19:46:31.193806+00:00",
-    "category": "الجنوب",
+    "category": "اليمن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -700,7 +768,11 @@
     "content": "يدخل حظر تربية الكلاب وذبحها وبيعها للاستهلاك البشري بكوريا الجنوبية حيز التنفيذ، الجمعة، في خطوة تعكس التراجع المستمر في استهلاك لحوم الكلاب بالبلاد خلال السنوات الأخيرة. ويأتي ذلك في ظل تحول الرأي العام، مدفوعا بتزايد الإقبال على تربية الحيوانات الأليفة وتنامي الوعي بقضايا الرفق بالحيوان.",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://s.france24.com/media/display/4c3fb23a-97cf-11f1-84ed-005056a97e36/w:1280/p:16x9/000-B8927KG.jpg",
+    "image_url": "https://s.france24.com/media/display/4c3fb23a-97cf-11f1-84ed-005056a97e36/w:1280/p:16x9/000-B8927KG.jpg",
+    "thumbnail": "https://s.france24.com/media/display/4c3fb23a-97cf-11f1-84ed-005056a97e36/w:1280/p:16x9/000-B8927KG.jpg"
   },
   {
     "id": "ece914ec21c06dd7bbd1",
