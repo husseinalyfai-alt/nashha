@@ -43,7 +43,11 @@
     "content": "تجري إيران وسلطنة عُمان محادثات تهدف إلى استئناف حركة الشحن عبر مضيق هرمز، في وقت صعّد الرئيس الأمريكي، دونالد ترامب ، ضغوطه على طهران مطالبا إياها بالاستسلام، وهدد بقصف عُمان \"إذا وقفت في طريقه\". وفي ملف غزة، كثف جاريد كوشنر، صهر ترامب ومبعوثه الخاص، تحركاته بعد لقاءات مع حركة حماس ورئيس الوزراء الإسرائيلي، بنيامين نتانياهو، بالتزامن مع توترات في العراق واليمن.",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://s.france24.com/media/display/11881b42-9a71-11f1-b8e8-005056a97e36/w:1280/p:16x9/FOTO-PORTADA-EEUU-TRUMP-AMENAZA-OMAN.jpg",
+    "image_url": "https://s.france24.com/media/display/11881b42-9a71-11f1-b8e8-005056a97e36/w:1280/p:16x9/FOTO-PORTADA-EEUU-TRUMP-AMENAZA-OMAN.jpg",
+    "thumbnail": "https://s.france24.com/media/display/11881b42-9a71-11f1-b8e8-005056a97e36/w:1280/p:16x9/FOTO-PORTADA-EEUU-TRUMP-AMENAZA-OMAN.jpg"
   },
   {
     "id": "bd51863692a1b1e496b9",
@@ -55,7 +59,7 @@
     "published": "2026-08-17T19:23:27+00:00",
     "published_at": "2026-08-17T19:23:27+00:00",
     "collected_at": "2026-08-18T06:03:35.030581+00:00",
-    "category": "الجنوب",
+    "category": "الضالع",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -64,7 +68,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "الضالع",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "2ab024de8557ade9a3ca",
@@ -76,7 +84,7 @@
     "published": "2026-08-17T19:21:42+00:00",
     "published_at": "2026-08-17T19:21:42+00:00",
     "collected_at": "2026-08-18T06:03:35.030612+00:00",
-    "category": "الجنوب",
+    "category": "حضرموت",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -85,7 +93,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "حضرموت",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178699450297235825.jpg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178699450297235825.jpg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178699450297235825.jpg"
   },
   {
     "id": "ccc2145fa42da7b3d0f4",
@@ -106,7 +118,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178699353592926354.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178699353592926354.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178699353592926354.jpeg"
   },
   {
     "id": "852f08c3d1444dbfe10d",
@@ -118,7 +134,7 @@
     "published": "2026-08-17T18:18:45+00:00",
     "published_at": "2026-08-17T18:18:45+00:00",
     "collected_at": "2026-08-18T06:03:33.883492+00:00",
-    "category": "الجنوب",
+    "category": "اليمن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -127,7 +143,11 @@
     "content": "كتب ترامب في منشوره: \"هذه المناورات ليست مكلفة فحسب، حيث تتحمل الولايات المتحدة الأمريكية جزءاً كبيراً من هذه التكاليف (كالعادة!)، بل إنها تبعث برسالة غير ملائمة وعدائية تماماً\".",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://ichef.bbci.co.uk/news/1200/branded_arabic/8ec5/live/665e9270-9a6e-11f1-b68f-817a5a696299.jpg",
+    "image_url": "https://ichef.bbci.co.uk/news/1200/branded_arabic/8ec5/live/665e9270-9a6e-11f1-b68f-817a5a696299.jpg",
+    "thumbnail": "https://ichef.bbci.co.uk/news/1200/branded_arabic/8ec5/live/665e9270-9a6e-11f1-b68f-817a5a696299.jpg"
   },
   {
     "id": "79c52f675acafe655bbe",
@@ -139,7 +159,7 @@
     "published": "2026-08-17T17:58:49+00:00",
     "published_at": "2026-08-17T17:58:49+00:00",
     "collected_at": "2026-08-18T06:03:35.030712+00:00",
-    "category": "الجنوب",
+    "category": "شبوة",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -148,7 +168,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "شبوة",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "3a92c5de62e207bed7dc",
@@ -160,7 +184,7 @@
     "published": "2026-08-17T17:23:52+00:00",
     "published_at": "2026-08-17T17:23:52+00:00",
     "collected_at": "2026-08-18T06:03:34.120938+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -169,7 +193,11 @@
     "content": "تواجه تونس منذ سنوات ضغوطا متزايدة على مواردها المائية، في ظل توالي فترات الجفاف بسبب نقص الأمطار وتراجع المخزون المائي وتأثيرات التغير المناخي، في بلد يعاني أصلا من محدودية موارده المائية. ومع حلول فصل الصيف وارتفاع الطلب على المياه، تعود الانقطاعات وصعوبات التزود لتثير تساؤلات حول واقع الأمن المائي في البلاد، بالتزامن مع نقص ملحوظ هذا العام في المياه المعدنية المعبأة، وندرتها في الأسواق. فهل تعيش تونس أزمة مائية فعلية؟",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://s.france24.com/media/display/d6d23e0a-9a49-11f1-952b-005056bf30b7/w:1280/p:16x9/secheresse-tunisie.jpg",
+    "image_url": "https://s.france24.com/media/display/d6d23e0a-9a49-11f1-952b-005056bf30b7/w:1280/p:16x9/secheresse-tunisie.jpg",
+    "thumbnail": "https://s.france24.com/media/display/d6d23e0a-9a49-11f1-952b-005056bf30b7/w:1280/p:16x9/secheresse-tunisie.jpg"
   },
   {
     "id": "44896d4ed80a6263cf15",
@@ -181,7 +209,7 @@
     "published": "2026-08-17T16:13:53+00:00",
     "published_at": "2026-08-17T16:13:53+00:00",
     "collected_at": "2026-08-18T06:03:35.030741+00:00",
-    "category": "الجنوب",
+    "category": "المهرة",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -190,7 +218,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "المهرة",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "4f11c15294f07d665664",
@@ -202,7 +234,7 @@
     "published": "2026-08-17T15:06:59+00:00",
     "published_at": "2026-08-17T15:06:59+00:00",
     "collected_at": "2026-08-18T06:03:35.030856+00:00",
-    "category": "الجنوب",
+    "category": "المهرة",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -211,7 +243,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "المهرة",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178697921934455045.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178697921934455045.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178697921934455045.jpeg"
   },
   {
     "id": "ca7e9b887248d13ea7e2",
@@ -223,7 +259,7 @@
     "published": "2026-08-17T15:05:34+00:00",
     "published_at": "2026-08-17T15:05:34+00:00",
     "collected_at": "2026-08-18T06:03:35.030880+00:00",
-    "category": "الجنوب",
+    "category": "سقطرى",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -232,7 +268,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "سقطرى",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "5d0b9a12540561ec0634",
@@ -244,7 +284,7 @@
     "published": "2026-08-17T15:02:14+00:00",
     "published_at": "2026-08-17T15:02:14+00:00",
     "collected_at": "2026-08-18T06:03:35.030921+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -253,7 +293,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178697893489047359.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178697893489047359.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178697893489047359.jpeg"
   },
   {
     "id": "5bbc4f8798699de9c93d",
@@ -265,7 +309,7 @@
     "published": "2026-08-17T15:00:40+00:00",
     "published_at": "2026-08-17T15:00:40+00:00",
     "collected_at": "2026-08-18T06:03:35.030944+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -274,7 +318,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "9a0076fdd10ea4666e41",
@@ -286,7 +334,7 @@
     "published": "2026-08-17T14:59:32+00:00",
     "published_at": "2026-08-17T14:59:32+00:00",
     "collected_at": "2026-08-18T06:03:35.030967+00:00",
-    "category": "الجنوب",
+    "category": "حضرموت",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -295,7 +343,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "حضرموت",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178697877275264324.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178697877275264324.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178697877275264324.jpeg"
   },
   {
     "id": "3dea28895974a49ac55e",
@@ -307,7 +359,7 @@
     "published": "2026-08-17T14:58:17+00:00",
     "published_at": "2026-08-17T14:58:17+00:00",
     "collected_at": "2026-08-18T06:03:35.030992+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -316,7 +368,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178697869792835287.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178697869792835287.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178697869792835287.jpeg"
   },
   {
     "id": "83bb1e34a6814d59f11f",
@@ -1003,7 +1059,7 @@
     "published": "2026-08-15T08:08:18+00:00",
     "published_at": "2026-08-15T08:08:18+00:00",
     "collected_at": "2026-08-18T06:03:33.883637+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -1012,7 +1068,11 @@
     "content": "ساهم عدم الاستقرار العالمي والصراعات وانعدام الثقة بالدولار الأمريكي في هذا الارتفاع، كما دفع الدول إلى تكديس المعدن النفيس.",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://ichef.bbci.co.uk/news/1200/branded_arabic/1d3c/live/ae764830-987c-11f1-a7ab-8b30adf0800a.jpg",
+    "image_url": "https://ichef.bbci.co.uk/news/1200/branded_arabic/1d3c/live/ae764830-987c-11f1-a7ab-8b30adf0800a.jpg",
+    "thumbnail": "https://ichef.bbci.co.uk/news/1200/branded_arabic/1d3c/live/ae764830-987c-11f1-a7ab-8b30adf0800a.jpg"
   },
   {
     "id": "cbcb5e933c0608a8f9db",
