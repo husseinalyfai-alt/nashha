@@ -18,7 +18,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178722651894055756.jpg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178722651894055756.jpg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178722651894055756.jpg"
   },
   {
     "id": "9ebc3f9753684725673b",
@@ -30,7 +34,7 @@
     "published": "2026-08-20T10:58:21+00:00",
     "published_at": "2026-08-20T10:58:21+00:00",
     "collected_at": "2026-08-20T11:59:08.175115+00:00",
-    "category": "الجنوب",
+    "category": "حضرموت",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -39,7 +43,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "حضرموت",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178722350120905132.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178722350120905132.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178722350120905132.jpeg"
   },
   {
     "id": "09e97e6ae55c7dd81cd4",
@@ -60,7 +68,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178718029713065526.jpg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178718029713065526.jpg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178718029713065526.jpg"
   },
   {
     "id": "0cef137d8050ffbdd542",
@@ -81,7 +93,11 @@
     "content": "حذرت طهران دول الخليج من تقديم أي مساعدة للولايات المتحدة في حربها على إيران، بعد وقف الإمارات تعاملاتها التجارية والمالية مع الجمهورية الإسلامية واستمرار الخلاف حول الملاحة في مضيق هرمز. وفي اليمن، تحدثت الحكومة عن تحرك حوثي محتمل نحو باب المندب، فيما تصاعد التوتر بين إسرائيل وتركيا بعدما قصفت إسرائيل قاعدة أبو الظهور الجوية في سوريا، محذرة من تمركز عسكري تركي فيها، وهو ما رفضته أنقرة بشدة. وفي غزة قتل عشرة فلسطينيين في غارتين.",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://s.france24.com/media/display/21d5120c-9c1a-11f1-9606-005056a97e36/w:1280/p:16x9/AFP-20260810-C4AZ2JM-v4-MidRes-TopshotIranUsIsraelWar.jpg",
+    "image_url": "https://s.france24.com/media/display/21d5120c-9c1a-11f1-9606-005056a97e36/w:1280/p:16x9/AFP-20260810-C4AZ2JM-v4-MidRes-TopshotIranUsIsraelWar.jpg",
+    "thumbnail": "https://s.france24.com/media/display/21d5120c-9c1a-11f1-9606-005056a97e36/w:1280/p:16x9/AFP-20260810-C4AZ2JM-v4-MidRes-TopshotIranUsIsraelWar.jpg"
   },
   {
     "id": "695810b855879ff6adf2",
@@ -127,7 +143,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178716180144769621.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178716180144769621.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178716180144769621.jpeg"
   },
   {
     "id": "0253418b19b733484d33",
@@ -139,7 +159,7 @@
     "published": "2026-08-19T17:45:12+00:00",
     "published_at": "2026-08-19T17:45:12+00:00",
     "collected_at": "2026-08-20T11:59:08.175482+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -148,7 +168,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178716151272584851.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178716151272584851.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178716151272584851.jpeg"
   },
   {
     "id": "abdbb9f142fb7bfcba2c",
@@ -169,7 +193,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "fe59a2cb3c01f0102837",
@@ -190,7 +218,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178715830630504174.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178715830630504174.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178715830630504174.jpeg"
   },
   {
     "id": "0f4c182df10944a0f0fd",
@@ -211,7 +243,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178715346093666350.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178715346093666350.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178715346093666350.jpeg"
   },
   {
     "id": "bda9638d4bae478cc9f8",
@@ -223,7 +259,7 @@
     "published": "2026-08-19T14:58:01+00:00",
     "published_at": "2026-08-19T14:58:01+00:00",
     "collected_at": "2026-08-20T10:58:55.685035+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -232,7 +268,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "74a452bffb495f57f81e",
@@ -2219,7 +2259,7 @@
     "published": "2026-08-15T08:08:18+00:00",
     "published_at": "2026-08-15T08:08:18+00:00",
     "collected_at": "2026-08-20T11:59:05.019492+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -2228,7 +2268,11 @@
     "content": "ساهم عدم الاستقرار العالمي والصراعات وانعدام الثقة بالدولار الأمريكي في هذا الارتفاع، كما دفع الدول إلى تكديس المعدن النفيس.",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://ichef.bbci.co.uk/news/1200/branded_arabic/1d3c/live/ae764830-987c-11f1-a7ab-8b30adf0800a.jpg",
+    "image_url": "https://ichef.bbci.co.uk/news/1200/branded_arabic/1d3c/live/ae764830-987c-11f1-a7ab-8b30adf0800a.jpg",
+    "thumbnail": "https://ichef.bbci.co.uk/news/1200/branded_arabic/1d3c/live/ae764830-987c-11f1-a7ab-8b30adf0800a.jpg"
   },
   {
     "id": "cbcb5e933c0608a8f9db",
