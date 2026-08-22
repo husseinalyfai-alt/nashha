@@ -18,7 +18,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178734710741534628.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178734710741534628.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178734710741534628.png"
   },
   {
     "id": "42170827d109495d0232",
@@ -39,7 +43,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178733681872949158.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178733681872949158.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178733681872949158.jpeg"
   },
   {
     "id": "c83b101e7fbdc7ce697a",
@@ -60,7 +68,11 @@
     "content": "أعلن الحوثيون أنهم استهدفوا بطائرتين مسيّرتين، المطار ومنشأة لمجموعة أرامكو النفطية في نجران بجنوب غرب السعودية، في ظل استمرار استهدافهم لجنوب المملكة أكبر مصّدر للنفط الخام بالعالمن.",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://s.france24.com/media/display/68501748-9d34-11f1-8428-005056a97e36/w:1280/p:16x9/AR-20260821-081348-081537-CS.jpg",
+    "image_url": "https://s.france24.com/media/display/68501748-9d34-11f1-8428-005056a97e36/w:1280/p:16x9/AR-20260821-081348-081537-CS.jpg",
+    "thumbnail": "https://s.france24.com/media/display/68501748-9d34-11f1-8428-005056a97e36/w:1280/p:16x9/AR-20260821-081348-081537-CS.jpg"
   },
   {
     "id": "b66e2b66f19b234819d5",
@@ -122,7 +134,7 @@
     "published": "2026-08-20T17:42:17+00:00",
     "published_at": "2026-08-20T17:42:17+00:00",
     "collected_at": "2026-08-21T23:52:21.440818+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -131,7 +143,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178724773753994606.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178724773753994606.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178724773753994606.jpeg"
   },
   {
     "id": "c44adb353bd342f862e4",
@@ -143,7 +159,7 @@
     "published": "2026-08-20T13:30:24+00:00",
     "published_at": "2026-08-20T13:30:24+00:00",
     "collected_at": "2026-08-21T23:52:21.440923+00:00",
-    "category": "الجنوب",
+    "category": "حضرموت",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -152,7 +168,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "حضرموت",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "c640e3e42fb65c02aa72",
@@ -164,7 +184,7 @@
     "published": "2026-08-20T13:27:18+00:00",
     "published_at": "2026-08-20T13:27:18+00:00",
     "collected_at": "2026-08-21T23:52:21.440971+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -173,7 +193,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/sabanew.png"
   },
   {
     "id": "6ede6ba389693ae7b55b",
@@ -185,7 +209,7 @@
     "published": "2026-08-20T13:24:59+00:00",
     "published_at": "2026-08-20T13:24:59+00:00",
     "collected_at": "2026-08-21T23:52:21.441000+00:00",
-    "category": "الجنوب",
+    "category": "سقطرى",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -194,7 +218,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "سقطرى",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178723229922367548.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178723229922367548.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178723229922367548.jpeg"
   },
   {
     "id": "a098509f6d4d791692ad",
@@ -215,7 +243,11 @@
     "content": "",
     "platform": "news",
     "source_type": "يمني",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "اليمن",
+    "image": "https://sabanew.net/image-resizer/w850/upload/thumbs/178723190892331961.jpeg",
+    "image_url": "https://sabanew.net/image-resizer/w850/upload/thumbs/178723190892331961.jpeg",
+    "thumbnail": "https://sabanew.net/image-resizer/w850/upload/thumbs/178723190892331961.jpeg"
   },
   {
     "id": "6ef1da959d040521992d",
@@ -2552,7 +2584,7 @@
     "published": "2026-08-15T08:08:18+00:00",
     "published_at": "2026-08-15T08:08:18+00:00",
     "collected_at": "2026-08-21T23:52:20.157334+00:00",
-    "category": "الجنوب",
+    "category": "عدن",
     "status": "published",
     "confidence": "high",
     "auto_published": true,
@@ -2561,7 +2593,11 @@
     "content": "ساهم عدم الاستقرار العالمي والصراعات وانعدام الثقة بالدولار الأمريكي في هذا الارتفاع، كما دفع الدول إلى تكديس المعدن النفيس.",
     "platform": "news",
     "source_type": "دولي",
-    "embed_url": ""
+    "embed_url": "",
+    "region": "عدن",
+    "image": "https://ichef.bbci.co.uk/news/1200/branded_arabic/1d3c/live/ae764830-987c-11f1-a7ab-8b30adf0800a.jpg",
+    "image_url": "https://ichef.bbci.co.uk/news/1200/branded_arabic/1d3c/live/ae764830-987c-11f1-a7ab-8b30adf0800a.jpg",
+    "thumbnail": "https://ichef.bbci.co.uk/news/1200/branded_arabic/1d3c/live/ae764830-987c-11f1-a7ab-8b30adf0800a.jpg"
   },
   {
     "id": "cbcb5e933c0608a8f9db",
